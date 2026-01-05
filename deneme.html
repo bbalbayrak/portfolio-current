@@ -1,0 +1,2582 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Portfolyo | Bilal Burak Albayrak</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./bba/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="./bba/favicon.svg" />
+    <link rel="shortcut icon" href="./bba/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./bba/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="./bba/site.webmanifest" />
+
+    <script src="tailwind.config.js"></script>
+    <style>
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+      .animation-delay-3000 {
+        animation-delay: 3s;
+      }
+      .animation-delay-4000 {
+        animation-delay: 4s;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #101922;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #233648;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #2b8cee;
+      }
+      .card-hover-effect:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(43, 140, 238, 0.1),
+          0 4px 6px -2px rgba(43, 140, 238, 0.05);
+      }
+
+      .holographic-grid {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+              90deg,
+              rgba(43, 140, 238, 0.03) 1px,
+              transparent 1px
+            )
+            0 0 / 50px 50px,
+          linear-gradient(rgba(43, 140, 238, 0.03) 1px, transparent 1px) 0 0 /
+            50px 50px;
+        mask-image: radial-gradient(
+          ellipse 80% 50% at 50% 50%,
+          black 30%,
+          transparent 70%
+        );
+        animation: gridFlow 20s linear infinite;
+      }
+
+      .neural-network {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+
+      .neural-line {
+        position: absolute;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(43, 140, 238, 0.3),
+          transparent
+        );
+        height: 1px;
+        transform-origin: left center;
+        animation: neuralFlow 8s linear infinite;
+      }
+
+      @keyframes neuralFlow {
+        0% {
+          transform: translateX(-100%) scaleX(0);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(100vw) scaleX(1);
+          opacity: 0;
+        }
+      }
+
+      .quantum-particles {
+        position: absolute;
+        inset: 0;
+      }
+
+      .quantum-particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: rgba(43, 140, 238, 0.8);
+        border-radius: 50%;
+        filter: blur(1px);
+        box-shadow: 0 0 10px 2px rgba(43, 140, 238, 0.6),
+          0 0 20px 5px rgba(43, 140, 238, 0.3);
+        animation: particleFloat 15s linear infinite;
+      }
+
+      .data-stream {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .data-bit {
+        position: absolute;
+        font-family: monospace;
+        color: rgba(43, 140, 238, 0.4);
+        font-size: 14px;
+        opacity: 0;
+        animation: dataFall 10s linear infinite;
+      }
+
+      @keyframes dataFall {
+        0% {
+          transform: translateY(-100px) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(100vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      .cosmic-dust {
+        position: absolute;
+        inset: 0;
+      }
+
+      .dust-particle {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        filter: blur(0.5px);
+        animation: dustFloat 20s linear infinite;
+      }
+
+      @keyframes dustFloat {
+        0% {
+          transform: translate(0, 0) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.5;
+        }
+        90% {
+          opacity: 0.5;
+        }
+        100% {
+          transform: translate(100px, -100px) rotate(180deg);
+          opacity: 0;
+        }
+      }
+
+      .cube-grid {
+        position: absolute;
+        inset: 0;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+      }
+
+      .cube {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        transform-style: preserve-3d;
+        animation: cubeRotate 40s linear infinite;
+      }
+
+      .cube-face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgba(43, 140, 238, 0.2);
+        background: rgba(43, 140, 238, 0.05);
+      }
+
+      .cube-face.front {
+        transform: translateZ(30px);
+      }
+      .cube-face.back {
+        transform: translateZ(-30px) rotateY(180deg);
+      }
+      .cube-face.right {
+        transform: rotateY(90deg) translateZ(30px);
+      }
+      .cube-face.left {
+        transform: rotateY(-90deg) translateZ(30px);
+      }
+      .cube-face.top {
+        transform: rotateX(90deg) translateZ(30px);
+      }
+      .cube-face.bottom {
+        transform: rotateX(-90deg) translateZ(30px);
+      }
+
+      @keyframes cubeRotate {
+        0% {
+          transform: rotateX(0) rotateY(0) rotateZ(0);
+        }
+        100% {
+          transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased overflow-x-hidden"
+  >
+    <!-- Header -->
+
+    <section
+      id="intro-1"
+      class="min-h-screen flex flex-col justify-center relative overflow-hidden border-b border-border-dark animate-slide-down"
+    >
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="neural-network">
+          <div
+            class="neural-line top-1/4"
+            style="width: 100vw; animation-delay: 0s"
+          ></div>
+          <div
+            class="neural-line top-1/3"
+            style="width: 80vw; animation-delay: 2s"
+          ></div>
+          <div
+            class="neural-line top-1/2"
+            style="width: 120vw; animation-delay: 4s"
+          ></div>
+          <div
+            class="neural-line top-2/3"
+            style="width: 90vw; animation-delay: 6s"
+          ></div>
+        </div>
+
+        <!-- Quantum Particles -->
+        <div class="quantum-particles">
+          <div
+            class="quantum-particle"
+            style="left: 10%; animation-delay: 0s"
+          ></div>
+          <div
+            class="quantum-particle"
+            style="left: 30%; animation-delay: 3s"
+          ></div>
+          <div
+            class="quantum-particle"
+            style="left: 50%; animation-delay: 6s"
+          ></div>
+          <div
+            class="quantum-particle"
+            style="left: 70%; animation-delay: 9s"
+          ></div>
+          <div
+            class="quantum-particle"
+            style="left: 90%; animation-delay: 12s"
+          ></div>
+        </div>
+
+        <!-- Ana Orb -->
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px]"
+        >
+          <div
+            class="absolute inset-0 rounded-full bg-gradient-to-r from-primary/30 via-primary/10 to-primary/30 animate-pulse-glow"
+          ></div>
+          <div
+            class="absolute inset-10 rounded-full border-2 border-primary/20 animate-spin-orb"
+          ></div>
+          <div
+            class="absolute inset-20 rounded-full border border-primary/10 animate-spin-slow"
+            style="animation-direction: reverse"
+          ></div>
+          <div
+            class="absolute inset-32 rounded-full border border-primary/5 animate-spin-slow"
+          ></div>
+        </div>
+
+        <!-- Küçük Orb'lar -->
+        <div
+          class="absolute top-1/3 left-1/4 w-[100px] h-[100px] animate-float"
+        >
+          <div
+            class="absolute inset-0 rounded-full bg-primary/10 blur-md"
+          ></div>
+          <div
+            class="absolute inset-5 rounded-full border border-primary/20"
+          ></div>
+        </div>
+
+        <div
+          class="absolute bottom-1/3 right-1/4 w-[80px] h-[80px] animate-float"
+          style="animation-delay: 2s"
+        >
+          <div
+            class="absolute inset-0 rounded-full bg-primary/10 blur-md"
+          ></div>
+          <div
+            class="absolute inset-5 rounded-full border border-primary/20"
+          ></div>
+        </div>
+
+        <!-- Data Stream -->
+        <div class="data-stream">
+          <div class="data-bit" style="left: 20%; animation-delay: 0s">
+            011001
+          </div>
+          <div class="data-bit" style="left: 40%; animation-delay: 1s">
+            101010
+          </div>
+          <div class="data-bit" style="left: 60%; animation-delay: 2s">
+            110011
+          </div>
+          <div class="data-bit" style="left: 80%; animation-delay: 3s">
+            001100
+          </div>
+          <div class="data-bit" style="left: 30%; animation-delay: 4s">
+            111000
+          </div>
+          <div class="data-bit" style="left: 50%; animation-delay: 5s">
+            010101
+          </div>
+          <div class="data-bit" style="left: 70%; animation-delay: 6s">
+            100110
+          </div>
+        </div>
+
+        <!-- Cosmic Dust -->
+        <div class="cosmic-dust"></div>
+        <div class="data-stream"></div>
+
+        <!-- 3D Cube Grid -->
+        <div class="cube-grid">
+          <div class="cube" style="top: 20%; left: 20%; animation-delay: 0s">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+          </div>
+          <div class="cube" style="top: 60%; left: 70%; animation-delay: 10s">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+          </div>
+          <div class="cube" style="top: 40%; left: 40%; animation-delay: 20s">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mevcut background efektleri -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] animate-blob mix-blend-screen dark:mix-blend-lighten opacity-60"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-[100px] animate-blob animation-delay-2000 ml-32 mt-20 mix-blend-screen dark:mix-blend-lighten opacity-60"
+        ></div>
+      </div>
+
+      <div
+        class="relative z-10 w-full px-5 py-20 flex flex-col items-center justify-center text-center"
+      >
+        <h1
+          class="mb-6 text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-slate-900 dark:text-white"
+        >
+          <span
+            class="block text-2xl md:text-3xl font-medium text-slate-500 dark:text-slate-400 tracking-normal mb-3"
+            >Hello, I'm</span
+          >
+          <span
+            class="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer"
+            >Bilal Burak Albayrak</span
+          >
+        </h1>
+        <p
+          class="mb-12 text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-medium"
+        >
+          Backend Developer
+        </p>
+        <div class="flex flex-col items-center gap-8 w-full">
+          <a
+            href="#intro-2"
+            class="group relative flex items-center justify-center gap-3 rounded-full bg-primary hover:bg-blue-600 px-12 py-5 text-lg font-bold text-white transition-all shadow-lg hover:-translate-y-1"
+          >
+            <span>More</span>
+            <span
+              class="material-symbols-outlined text-[24px] group-hover:translate-x-1 transition-transform"
+              >arrow_downward</span
+            >
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="intro-2"
+      class="w-full relative overflow-hidden bg-background-light dark:bg-background-dark py-20 lg:py-32 border-b border-border-dark"
+    >
+      <div
+        class="absolute -top-[20%] -right-[10%] h-[500px] w-[500px] rounded-full bg-primary/10 blur-[100px] pointer-events-none"
+      ></div>
+      <div
+        class="absolute top-[40%] -left-[10%] h-[300px] w-[300px] rounded-full bg-blue-500/10 blur-[80px] pointer-events-none"
+      ></div>
+
+      <div class="mx-auto max-w-[1280px] px-5">
+        <div
+          class="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-20"
+        >
+          <div class="flex flex-col gap-8 flex-1 text-center lg:text-left z-10">
+            <div class="flex flex-col gap-4">
+              <h2
+                class="text-4xl md:text-5xl font-bold leading-[1.1] tracking-[-0.033em] text-slate-900 dark:text-white"
+              >
+                Scalable & Robust <br />
+                <span
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400"
+                  >Backend</span
+                >
+                Solutions.
+              </h2>
+              <p
+                class="text-base md:text-lg leading-relaxed text-slate-500 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0"
+              >
+                Specializing in Microservices, Database Management, and API
+                Development. I ensure your data is secure and your applications
+                run smoothly.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+              <a
+                href="#about"
+                class="group flex items-center justify-center gap-2 rounded-lg bg-primary hover:bg-blue-600 px-6 py-3.5 text-base font-bold text-white transition-all shadow-lg"
+              >
+                <span>About Me</span>
+                <span
+                  class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+
+            <div
+              class="mt-4 pt-8 border-t border-slate-200 dark:border-border-dark flex flex-col gap-4"
+            >
+              <p
+                class="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500"
+              >
+                Stay Connected
+              </p>
+              <div class="flex justify-center lg:justify-start gap-4">
+                <!-- LinkedIn Card -->
+                <a
+                  class="group flex items-center gap-3 rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-border-dark p-3 hover:border-primary/50 transition-colors shadow-sm"
+                  href="https://www.linkedin.com/in/bbalbayrak/"
+                  target="_blank"
+                >
+                  <div
+                    class="flex h-8 w-8 items-center justify-center rounded-full bg-[#0077b5]/10 text-[#0077b5]"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col text-left">
+                    <span class="text-xs text-slate-500 dark:text-slate-400"
+                      >LinkedIn</span
+                    >
+                    <span
+                      class="text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors"
+                      >Connect</span
+                    >
+                  </div>
+                </a>
+
+                <!-- GitHub Card -->
+                <a
+                  class="group flex items-center gap-3 rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-border-dark p-3 hover:border-primary/50 transition-colors shadow-sm"
+                  href="https://github.com/bbalbayrak"
+                  target="_blank"
+                >
+                  <div
+                    class="flex h-8 w-8 items-center justify-center rounded-full bg-slate-800/10 text-slate-800 dark:bg-white/10 dark:text-white"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col text-left">
+                    <span class="text-xs text-slate-500 dark:text-slate-400"
+                      >GitHub</span
+                    >
+                    <span
+                      class="text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors"
+                      >Follow</span
+                    >
+                  </div>
+                </a>
+
+                <!-- Email Card -->
+                <a
+                  class="group flex items-center gap-3 rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-border-dark p-3 hover:border-primary/50 transition-colors shadow-sm"
+                  href="mailto:bbalbayrakk@gmail.com"
+                >
+                  <div
+                    class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-500/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col text-left">
+                    <span class="text-xs text-slate-500 dark:text-slate-400"
+                      >Email</span
+                    >
+                    <span
+                      class="text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors"
+                      >Contact</span
+                    >
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex-1 w-full flex justify-center lg:justify-end relative"
+          >
+            <div class="relative w-full max-w-[500px] aspect-square">
+              <div
+                class="absolute inset-0 rounded-full border border-slate-200 dark:border-slate-800 scale-90"
+              ></div>
+              <div
+                class="absolute inset-0 rounded-full border border-slate-200 dark:border-slate-800 scale-75 opacity-50"
+              ></div>
+              <div
+                class="absolute inset-0 rounded-full border border-dashed border-primary/30 scale-110 animate-spin-slow"
+              ></div>
+              <div
+                class="absolute inset-4 rounded-3xl overflow-hidden shadow-2xl bg-card-dark border-4 border-white dark:border-card-dark"
+              >
+                <div
+                  class="w-full h-full bg-cover bg-center bg-no-repeat"
+                  style="
+                    background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop');
+                  "
+                >
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent"
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="absolute -bottom-6 -right-4 md:right-8 bg-white dark:bg-card-dark p-4 rounded-2xl shadow-xl border border-slate-100 dark:border-border-dark flex items-center gap-3 animate-bounce"
+                style="animation-duration: 3s"
+              >
+                <div
+                  class="bg-blue-100 dark:bg-blue-900/30 p-2 rounded-lg text-blue-600 dark:text-blue-400"
+                >
+                  <span class="material-symbols-outlined">logo_dev</span>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-500 font-semibold">Expertise</p>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">
+                    Backend & Cloud
+                  </p>
+                </div>
+              </div>
+              <div
+                class="absolute top-10 -left-4 md:left-0 bg-white dark:bg-card-dark p-3 rounded-2xl shadow-xl border border-slate-100 dark:border-border-dark flex items-center gap-3 animate-pulse"
+                style="animation-duration: 4s"
+              >
+                <div
+                  class="bg-green-100 dark:bg-green-900/30 p-2 rounded-lg text-green-600 dark:text-green-400"
+                >
+                  <span class="material-symbols-outlined">check_circle</span>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-500 font-semibold">Success</p>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">
+                    Experience 3+ Years
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="about"
+      class="w-full bg-surface-dark border-b border-border-dark"
+    >
+      <div class="w-full max-w-[1000px] px-5 md:px-10 py-16 mx-auto">
+        <div class="flex flex-col items-center text-center mb-16">
+          <div
+            class="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-2xl border-4 border-border-dark mb-6 group"
+          >
+            <img
+              src="https://drive.google.com/thumbnail?id=1oIFUVJ6rK_KxXKCunUZQ6S_z-WGGZBI6&sz=w400"
+              alt="Bilal Burak Albayrak"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            Building the invisible engine of the web
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400"
+              >is my passion.</span
+            >
+          </h2>
+          <div
+            class="max-w-[800px] space-y-6 text-slate-300 text-lg leading-relaxed font-body"
+          >
+            <p>
+              Hello! I'm Bilal Burak. I am a software developer passionate about
+              building scalable, secure, and high-performance server-side
+              systems. Instead of just focusing on what users see, I focus on
+              how the system works. I design robust APIs and manage complex data
+              structures to ensure seamless digital experiences.
+            </p>
+          </div>
+        </div>
+
+        <div class="mb-20">
+          <div class="mb-10 text-center">
+            <h2
+              class="text-primary text-sm font-bold tracking-widest uppercase mb-2"
+            >
+              Skills
+            </h2>
+            <h3 class="text-white text-3xl font-bold">My Expertise</h3>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div
+              class="group p-6 rounded-xl bg-background-dark border border-border-dark hover:border-primary/50 transition-all duration-300 text-center"
+            >
+              <div
+                class="size-12 mx-auto rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors"
+              >
+                <span class="material-symbols-outlined text-[28px]">code</span>
+              </div>
+              <h4 class="text-lg font-bold text-white mb-2">
+                Backend Development
+              </h4>
+              <p class="text-slate-400 text-sm">
+                Building robust and scalable architectures using [JavaScript /
+                TypeScript / NodeJs] and modern frameworks.
+              </p>
+            </div>
+            <div
+              class="group p-6 rounded-xl bg-background-dark border border-border-dark hover:border-primary/50 transition-all duration-300 text-center"
+            >
+              <div
+                class="size-12 mx-auto rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors"
+              >
+                <span class="material-symbols-outlined text-[28px]"
+                  >database</span
+                >
+              </div>
+              <h4 class="text-lg font-bold text-white mb-2">
+                Database & Architecture
+              </h4>
+              <p class="text-slate-400 text-sm">
+                Designing optimized database schemas (SQL/NoSQL) and ensuring
+                data integrity.
+              </p>
+            </div>
+            <div
+              class="group p-6 rounded-xl bg-background-dark border border-border-dark hover:border-primary/50 transition-all duration-300 text-center"
+            >
+              <div
+                class="size-12 mx-auto rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors"
+              >
+                <span class="material-symbols-outlined text-[28px]">cloud</span>
+              </div>
+              <h4 class="text-lg font-bold text-white mb-2">
+                API & Cloud Services
+              </h4>
+              <p class="text-slate-400 text-sm">
+                Developing RESTful APIs / Microservices and managing cloud
+                deployments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="career"
+      class="flex flex-col items-center flex-grow py-20 px-4 md:px-10 w-full bg-[#101922] border-b border-border-dark"
+    >
+      <div class="w-full max-w-[960px] flex flex-col gap-10">
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-[#233648] pb-6 gap-4"
+        >
+          <div>
+            <h1
+              class="text-3xl md:text-4xl font-bold tracking-tight mb-2 text-white"
+            >
+              Education Information
+            </h1>
+          </div>
+        </div>
+
+        <div class="relative pl-2 md:pl-0">
+          <div
+            class="absolute left-8 top-0 bottom-0 w-[2px] bg-[#233648] hidden md:block md:left-1/2 md:-ml-[1px]"
+          ></div>
+          <div
+            class="absolute left-6 top-0 bottom-0 w-[2px] bg-[#233648] md:hidden"
+          ></div>
+
+          <div class="flex flex-col gap-12">
+            <div
+              class="relative flex flex-col md:flex-row items-center w-full group"
+            >
+              <div class="hidden md:flex w-1/2 justify-end pr-12 pb-2">
+                <span
+                  class="text-gray-400 font-bold text-lg group-hover:text-primary transition-colors"
+                  >2022 - 2025</span
+                >
+              </div>
+              <div
+                class="absolute left-6 md:left-1/2 -ml-[18px] md:-ml-[18px] flex h-9 w-9 items-center justify-center rounded-full border-4 border-[#111a22] bg-[#233648] group-hover:bg-primary transition-colors z-10"
+              >
+                <span class="material-symbols-outlined text-white text-[18px]"
+                  >school</span
+                >
+              </div>
+              <div class="flex w-full md:w-1/2 pl-16 md:pl-12">
+                <div
+                  class="flex flex-col gap-3 p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 w-full"
+                >
+                  <div
+                    class="flex flex-col sm:flex-row justify-between sm:items-start gap-2"
+                  >
+                    <div>
+                      <h3 class="text-xl font-bold text-white">
+                        Computer Engineering
+                      </h3>
+                      <p class="text-primary font-medium">
+                        Karadeniz Technical University
+                      </p>
+                    </div>
+                    <span
+                      class="md:hidden inline-flex items-center rounded-md bg-[#233648] px-2 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 w-fit"
+                      >2022 - 2025</span
+                    >
+                  </div>
+                  <div
+                    class="flex items-center gap-4 mt-2 border-t border-[#233648] pt-3"
+                  >
+                    <div class="flex flex-col">
+                      <span
+                        class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold"
+                        >Degree</span
+                      >
+                      <span class="text-sm font-medium text-white"
+                        >Bachelor's (B.Sc.)</span
+                      >
+                    </div>
+                    <div class="w-[1px] h-8 bg-[#233648]"></div>
+                    <div class="flex flex-col">
+                      <span
+                        class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold"
+                        >GPA</span
+                      >
+                      <span class="text-sm font-medium text-white"
+                        >3.02 / 4.00 (Honor Student)</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- İkinci eğitim: Selcuk University (sağda) -->
+            <div
+              class="relative flex flex-col md:flex-row-reverse items-center w-full group"
+            >
+              <div class="hidden md:flex w-1/2 justify-start pl-12 pb-2">
+                <span
+                  class="text-gray-400 font-bold text-lg group-hover:text-primary transition-colors"
+                  >2020 - 2022</span
+                >
+              </div>
+              <div
+                class="absolute left-6 md:left-1/2 -ml-[18px] md:-ml-[18px] flex h-9 w-9 items-center justify-center rounded-full border-4 border-[#111a22] bg-[#233648] group-hover:bg-primary transition-colors z-10"
+              >
+                <span class="material-symbols-outlined text-white text-[18px]"
+                  >school</span
+                >
+              </div>
+              <div class="flex w-full md:w-1/2 pl-16 md:pr-12 md:pl-0">
+                <div
+                  class="flex flex-col gap-3 p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 w-full"
+                >
+                  <div
+                    class="flex flex-col sm:flex-row justify-between sm:items-start gap-2"
+                  >
+                    <div>
+                      <h3 class="text-xl font-bold text-white">
+                        Computer Engineering
+                      </h3>
+                      <p class="text-primary font-medium">Selcuk University</p>
+                    </div>
+                    <span
+                      class="md:hidden inline-flex items-center rounded-md bg-[#233648] px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-500/20 w-fit"
+                      >2020 - 2022</span
+                    >
+                  </div>
+                  <div
+                    class="flex items-center gap-4 mt-2 border-t border-[#233648] pt-3"
+                  >
+                    <div class="flex flex-col">
+                      <span
+                        class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold"
+                        >Degree</span
+                      >
+                      <span class="text-sm font-medium text-white"
+                        >Bachelor's (B.Sc.)</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sertifika 1: Bitaksi Go Bootcamp (solda) -->
+            <div
+              class="relative flex flex-col md:flex-row items-center w-full group"
+            >
+              <div class="hidden md:flex w-1/2 justify-end pr-12 pb-2">
+                <span
+                  class="text-gray-400 font-bold text-lg group-hover:text-primary transition-colors"
+                  >2025</span
+                >
+              </div>
+              <div
+                class="absolute left-6 md:left-1/2 -ml-[18px] md:-ml-[18px] flex h-9 w-9 items-center justify-center rounded-full border-4 border-[#111a22] bg-[#233648] group-hover:bg-primary transition-colors z-10"
+              >
+                <span class="material-symbols-outlined text-white text-[18px]"
+                  >verified</span
+                >
+              </div>
+              <div class="flex w-full md:w-1/2 pl-16 md:pl-12">
+                <div
+                  class="flex flex-col gap-3 p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 w-full"
+                >
+                  <div
+                    class="flex flex-col sm:flex-row justify-between sm:items-start gap-2"
+                  >
+                    <div>
+                      <h3 class="text-xl font-bold text-white">
+                        Bitaksi Go Bootcamp
+                      </h3>
+                      <p class="text-primary font-medium">Coderspace</p>
+                    </div>
+                    <span
+                      class="md:hidden inline-flex items-center rounded-md bg-[#233648] px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-500/20 w-fit"
+                      >2025</span
+                    >
+                  </div>
+                  <div class="flex flex-wrap gap-2 mt-2">
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >Go Certificate</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sertifika 2: Modern Web Development Course (sağda) -->
+            <div
+              class="relative flex flex-col md:flex-row-reverse items-center w-full group"
+            >
+              <div class="hidden md:flex w-1/2 justify-start pl-12 pb-2">
+                <span
+                  class="text-gray-400 font-bold text-lg group-hover:text-primary transition-colors"
+                  >2022</span
+                >
+              </div>
+              <div
+                class="absolute left-6 md:left-1/2 -ml-[18px] md:-ml-[18px] flex h-9 w-9 items-center justify-center rounded-full border-4 border-[#111a22] bg-[#233648] group-hover:bg-primary transition-colors z-10"
+              >
+                <span class="material-symbols-outlined text-white text-[18px]"
+                  >verified</span
+                >
+              </div>
+              <div class="flex w-full md:w-1/2 pl-16 md:pr-12 md:pl-0">
+                <div
+                  class="flex flex-col gap-3 p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 w-full"
+                >
+                  <div
+                    class="flex flex-col sm:flex-row justify-between sm:items-start gap-2"
+                  >
+                    <div>
+                      <h3 class="text-xl font-bold text-white">
+                        Modern Web Development Course
+                      </h3>
+                      <p class="text-primary font-medium">Udemy</p>
+                    </div>
+                    <span
+                      class="md:hidden inline-flex items-center rounded-md bg-[#233648] px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-500/20 w-fit"
+                      >2022</span
+                    >
+                  </div>
+                  <div class="flex flex-wrap gap-2 mt-2">
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >Web Certificate</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sertifika 3: Başka bir Web Certificate (solda) - eğer gerekliyse -->
+            <div
+              class="relative flex flex-col md:flex-row items-center w-full group"
+            >
+              <div class="hidden md:flex w-1/2 justify-end pr-12 pb-2">
+                <span
+                  class="text-gray-400 font-bold text-lg group-hover:text-primary transition-colors"
+                  >2022</span
+                >
+              </div>
+              <div
+                class="absolute left-6 md:left-1/2 -ml-[18px] md:-ml-[18px] flex h-9 w-9 items-center justify-center rounded-full border-4 border-[#111a22] bg-[#233648] group-hover:bg-primary transition-colors z-10"
+              >
+                <span class="material-symbols-outlined text-white text-[18px]"
+                  >verified</span
+                >
+              </div>
+              <div class="flex w-full md:w-1/2 pl-16 md:pl-12">
+                <div
+                  class="flex flex-col gap-3 p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 w-full"
+                >
+                  <div
+                    class="flex flex-col sm:flex-row justify-between sm:items-start gap-2"
+                  >
+                    <div>
+                      <h3 class="text-xl font-bold text-white">
+                        Introduction to Programming with JAVA
+                      </h3>
+                      <p class="text-primary font-medium">BTK Academy</p>
+                    </div>
+                    <span
+                      class="md:hidden inline-flex items-center rounded-md bg-[#233648] px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-500/20 w-fit"
+                      >2022</span
+                    >
+                  </div>
+                  <div class="flex flex-wrap gap-2 mt-2">
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >Introduction to Programming with JAVA Certificate</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="relative flex flex-col md:flex-row-reverse items-center w-full group"
+          >
+            <div class="hidden md:flex w-1/2 justify-start pl-12 pb-2">
+              <span
+                class="text-gray-400 font-bold text-lg group-hover:text-primary transition-colors"
+                >2022</span
+              >
+            </div>
+            <div
+              class="absolute left-6 md:left-1/2 -ml-[18px] md:-ml-[18px] flex h-9 w-9 items-center justify-center rounded-full border-4 border-[#111a22] bg-[#233648] group-hover:bg-primary transition-colors z-10"
+            >
+              <span class="material-symbols-outlined text-white text-[18px]"
+                >verified</span
+              >
+            </div>
+            <div class="flex w-full md:w-1/2 pl-16 md:pr-12 md:pl-0">
+              <div
+                class="flex flex-col gap-3 p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 w-full"
+              >
+                <div
+                  class="flex flex-col sm:flex-row justify-between sm:items-start gap-2"
+                >
+                  <div>
+                    <h3 class="text-xl font-bold text-white">Advanced Java</h3>
+                    <p class="text-primary font-medium">BTK Academy</p>
+                  </div>
+                  <span
+                    class="md:hidden inline-flex items-center rounded-md bg-[#233648] px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-500/20 w-fit"
+                    >2022</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <span
+                    class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                    >Advanced Java Certificate</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="experience"
+      class="flex flex-col items-center flex-grow py-20 px-4 md:px-10 w-full bg-background-dark border-b border-border-dark"
+    >
+      <div class="w-full max-w-[960px] flex flex-col gap-10">
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-[#233648] pb-6 gap-4"
+        >
+          <div>
+            <h1
+              class="text-3xl md:text-4xl font-bold tracking-tight mb-2 text-white"
+            >
+              Professional Experience
+            </h1>
+          </div>
+          <button
+            onclick="window.open('https://drive.google.com/file/d/1WsdX2Kbck4eHiHCENeceL0ozvdWiOYrn/view?usp=sharing', '_blank')"
+            class="flex shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-blue-600 transition-all text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/20"
+          >
+            <span class="material-symbols-outlined text-[20px]">download</span>
+            <span class="truncate">Download CV</span>
+          </button>
+        </div>
+        <div class="relative pl-2 md:pl-0">
+          <div
+            class="absolute left-8 top-0 bottom-0 w-[2px] bg-[#233648] hidden md:block md:left-1/2 md:-ml-[1px]"
+          ></div>
+          <div
+            class="absolute left-6 top-0 bottom-0 w-[2px] bg-[#233648] md:hidden"
+          ></div>
+          <div class="flex flex-col gap-12">
+            <div
+              class="relative flex flex-col md:flex-row items-center w-full group"
+            >
+              <div class="hidden md:flex w-1/2 justify-end pr-12 pb-2">
+                <span
+                  class="text-gray-400 font-bold text-lg group-hover:text-primary transition-colors"
+                  >06/2025 - 10/2025</span
+                >
+              </div>
+              <div
+                class="absolute left-6 md:left-1/2 -ml-[18px] md:-ml-[18px] flex h-9 w-9 items-center justify-center rounded-full border-4 border-[#111a22] bg-[#233648] group-hover:bg-primary transition-colors z-10"
+              >
+                <span class="material-symbols-outlined text-white text-[18px]"
+                  >work</span
+                >
+              </div>
+              <div class="flex w-full md:w-1/2 pl-16 md:pl-12">
+                <div
+                  class="flex flex-col gap-3 p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 w-full"
+                >
+                  <div
+                    class="flex flex-col sm:flex-row justify-between sm:items-start gap-2"
+                  >
+                    <div>
+                      <h3 class="text-xl font-bold text-white">
+                        Software Development Intern
+                      </h3>
+                      <p class="text-primary font-medium">
+                        Turkcell Global Bilgi
+                      </p>
+                    </div>
+                    <span
+                      class="md:hidden inline-flex items-center rounded-md bg-[#233648] px-2 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 w-fit"
+                      >06/2025 - 10/2025</span
+                    >
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">
+                    Gained hands-on experience in enterprise software
+                    development with a focus on Core Java and backend
+                    architectures. I participated in code reviews, designed
+                    system diagrams using Microsoft Visio, and adapted to agile
+                    team workflows. Additionally, I demonstrated versatility and
+                    high-performance by winning first place in a company
+                    hackathon with a project developed using React.js.
+                  </p>
+                  <div class="flex flex-wrap gap-2 mt-2">
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >Java</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >Software Architecture</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >Hackathon Winner</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >React.js</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="relative flex flex-col md:flex-row-reverse items-center w-full group"
+            >
+              <div class="hidden md:flex w-1/2 justify-start pl-12 pb-2">
+                <span
+                  class="text-gray-400 font-bold text-lg group-hover:text-primary transition-colors"
+                  >08/2024 - 09/2024</span
+                >
+              </div>
+              <div
+                class="absolute left-6 md:left-1/2 -ml-[18px] md:-ml-[18px] flex h-9 w-9 items-center justify-center rounded-full border-4 border-[#111a22] bg-[#233648] group-hover:bg-primary transition-colors z-10"
+              >
+                <span class="material-symbols-outlined text-white text-[18px]"
+                  >work</span
+                >
+              </div>
+              <div class="flex w-full md:w-1/2 pl-16 md:pr-12 md:pl-0">
+                <div
+                  class="flex flex-col gap-3 p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 w-full"
+                >
+                  <div
+                    class="flex flex-col sm:flex-row justify-between sm:items-start gap-2"
+                  >
+                    <div>
+                      <h3 class="text-xl font-bold text-white">
+                        Frontend Developer Intern
+                      </h3>
+                      <p class="text-primary font-medium">Jotform</p>
+                    </div>
+                    <span
+                      class="md:hidden inline-flex items-center rounded-md bg-[#233648] px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-500/20 w-fit"
+                      >08/2024 - 09/2024</span
+                    >
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">
+                    Contributed to a large-scale web application by integrating
+                    new structures and developing features within a complex
+                    codebase. Collaborated with senior developers to implement
+                    clean code principles and modern architectural patterns.
+                    Gained deep experience in component-based design using
+                    React.js and TailwindCSS, while ensuring seamless
+                    integration with dynamic backend-driven elements through
+                    JavaScript.
+                  </p>
+                  <div class="flex flex-wrap gap-2 mt-2">
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >React.js</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >JavaScript</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >TailwindCSS</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >Clean Code</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >Agile/Scrum</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="relative flex flex-col md:flex-row items-center w-full group"
+            >
+              <div class="hidden md:flex w-1/2 justify-end pr-12 pb-2">
+                <span
+                  class="text-gray-400 font-bold text-lg group-hover:text-primary transition-colors"
+                  >03/2024 - 08/2024</span
+                >
+              </div>
+              <div
+                class="absolute left-6 md:left-1/2 -ml-[18px] md:-ml-[18px] flex h-9 w-9 items-center justify-center rounded-full border-4 border-[#111a22] bg-[#233648] group-hover:bg-primary transition-colors z-10"
+              >
+                <span class="material-symbols-outlined text-white text-[18px]"
+                  >work</span
+                >
+              </div>
+              <div class="flex w-full md:w-1/2 pl-16 md:pl-12">
+                <div
+                  class="flex flex-col gap-3 p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 w-full"
+                >
+                  <div
+                    class="flex flex-col sm:flex-row justify-between sm:items-start gap-2"
+                  >
+                    <div>
+                      <h3 class="text-xl font-bold text-white">
+                        Backend Developer
+                      </h3>
+                      <p class="text-primary font-medium">Steelify</p>
+                    </div>
+                    <span
+                      class="md:hidden inline-flex items-center rounded-md bg-[#233648] px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-500/20 w-fit"
+                      >03/2024 - 08/2024</span
+                    >
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">
+                    Developed a scalable backend architecture for a startup
+                    platform using NestJS and Node.js. Responsible for database
+                    design with PostgreSQL, containerization via Docker, and
+                    cloud deployment on Microsoft Azure. Focused on
+                    high-performance API security and modular system design.
+                  </p>
+                  <div class="flex flex-wrap gap-2 mt-2">
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >NestJS</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >PostgreSQL</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >Docker</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >Microsoft Azure</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >API Security</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="relative flex flex-col md:flex-row-reverse items-center w-full group"
+            >
+              <div class="hidden md:flex w-1/2 justify-start pl-12 pb-2">
+                <span
+                  class="text-gray-400 font-bold text-lg group-hover:text-primary transition-colors"
+                  >09/2023 - 08/2024</span
+                >
+              </div>
+              <div
+                class="absolute left-6 md:left-1/2 -ml-[18px] md:-ml-[18px] flex h-9 w-9 items-center justify-center rounded-full border-4 border-[#111a22] bg-[#233648] group-hover:bg-primary transition-colors z-10"
+              >
+                <span class="material-symbols-outlined text-white text-[18px]"
+                  >work</span
+                >
+              </div>
+              <div class="flex w-full md:w-1/2 pl-16 md:pr-12 md:pl-0">
+                <div
+                  class="flex flex-col gap-3 p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 w-full"
+                >
+                  <div
+                    class="flex flex-col sm:flex-row justify-between sm:items-start gap-2"
+                  >
+                    <div>
+                      <h3 class="text-xl font-bold text-white">
+                        Software Developer
+                      </h3>
+                      <p class="text-primary font-medium">
+                        Yena Engineering BV
+                      </p>
+                    </div>
+                    <span
+                      class="md:hidden inline-flex items-center rounded-md bg-[#233648] px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-500/20 w-fit"
+                      >09/2023 - 08/2024</span
+                    >
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">
+                    Developed scalable backend systems by transitioning from
+                    Java Spring Boot to NestJS. Responsible for RESTful API
+                    architecture, PostgreSQL data management, and CI/CD
+                    deployment processes. Focused on maintaining system
+                    stability through modular code and clean architecture
+                    principles.
+                  </p>
+                  <div class="flex flex-wrap gap-2 mt-2">
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >Java/Spring Boot</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >NestJS</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >PostgreSQL</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >REST API</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >CI/CD</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="relative flex flex-col md:flex-row items-center w-full group"
+            >
+              <div class="hidden md:flex w-1/2 justify-end pr-12 pb-2">
+                <span
+                  class="text-gray-400 font-bold text-lg group-hover:text-primary transition-colors"
+                  >07/2023 - 09/2023</span
+                >
+              </div>
+              <div
+                class="absolute left-6 md:left-1/2 -ml-[18px] md:-ml-[18px] flex h-9 w-9 items-center justify-center rounded-full border-4 border-[#111a22] bg-[#233648] group-hover:bg-primary transition-colors z-10"
+              >
+                <span class="material-symbols-outlined text-white text-[18px]"
+                  >work</span
+                >
+              </div>
+              <div class="flex w-full md:w-1/2 pl-16 md:pl-12">
+                <div
+                  class="flex flex-col gap-3 p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 w-full"
+                >
+                  <div
+                    class="flex flex-col sm:flex-row justify-between sm:items-start gap-2"
+                  >
+                    <div>
+                      <h3 class="text-xl font-bold text-white">
+                        Software Developer Intern
+                      </h3>
+                      <p class="text-primary font-medium">
+                        Yena Engineering BV
+                      </p>
+                    </div>
+                    <span
+                      class="md:hidden inline-flex items-center rounded-md bg-[#233648] px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-500/20 w-fit"
+                      >07/2023 - 09/2023</span
+                    >
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">
+                    Developed end-to-end solutions for web and mobile platforms
+                    using React and React Native. Built high-performance RESTful
+                    APIs with Node.js and Fastify.js, managed PostgreSQL
+                    databases, and ensured seamless full-stack integration
+                    across cross-functional teams.
+                  </p>
+                  <div class="flex flex-wrap gap-2 mt-2">
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >Fastify.js</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >PostgreSQL</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >Full-Stack</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >React Native</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="relative flex flex-col md:flex-row-reverse items-center w-full group"
+            >
+              <div class="hidden md:flex w-1/2 justify-start pl-12 pb-2">
+                <span
+                  class="text-gray-400 font-bold text-lg group-hover:text-primary transition-colors"
+                  >12/2022 - 02/2023</span
+                >
+              </div>
+              <div
+                class="absolute left-6 md:left-1/2 -ml-[18px] md:-ml-[18px] flex h-9 w-9 items-center justify-center rounded-full border-4 border-[#111a22] bg-[#233648] group-hover:bg-primary transition-colors z-10"
+              >
+                <span class="material-symbols-outlined text-white text-[18px]"
+                  >work</span
+                >
+              </div>
+              <div class="flex w-full md:w-1/2 pl-16 md:pr-12 md:pl-0">
+                <div
+                  class="flex flex-col gap-3 p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 w-full"
+                >
+                  <div
+                    class="flex flex-col sm:flex-row justify-between sm:items-start gap-2"
+                  >
+                    <div>
+                      <h3 class="text-xl font-bold text-white">
+                        Backend Developer Intern
+                      </h3>
+                      <p class="text-primary font-medium">MonSpark</p>
+                    </div>
+                    <span
+                      class="md:hidden inline-flex items-center rounded-md bg-[#233648] px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-500/20 w-fit"
+                      >12/2022 - 02/2023</span
+                    >
+                  </div>
+                  <p class="text-gray-400 text-sm leading-relaxed">
+                    Developed a full-scale marketplace application from scratch
+                    using Node.js and Express.js. Engineered the entire backend
+                    logic, including RESTful APIs, authentication, and MongoDB
+                    database management. Demonstrated the ability to take full
+                    ownership of a project from conception to completion.
+                  </p>
+                  <div class="flex flex-wrap gap-2 mt-2">
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >Node.js</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >Express.js</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >MongoDB</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >REST API</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
+                      >E-commerce</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="projects"
+      class="flex flex-col items-center flex-grow py-20 px-4 md:px-10 w-full bg-background-dark border-b border-border-dark"
+    >
+      <div class="w-full max-w-[960px] flex flex-col gap-10">
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-[#233648] pb-6 gap-4"
+        >
+          <div>
+            <h1
+              class="text-3xl md:text-4xl font-bold tracking-tight mb-2 text-white"
+            >
+              Projects
+            </h1>
+            <p class="text-gray-400 text-sm md:text-base max-w-xl">
+              I architect scalable, high-performance, and secure server-side
+              systems. Passionate about transforming complex logic into seamless
+              digital reality.
+            </p>
+          </div>
+          <a
+            class="flex shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-[#233648] hover:bg-[#2d455d] transition-all text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] border border-[#233648] hover:border-gray-600 shadow-lg shadow-black/20"
+            href="https://github.com/bbalbayrak"
+            target="_blank"
+          >
+            <span class="material-symbols-outlined text-[20px]"
+              >call_merge</span
+            >
+            <span class="truncate">GitHub Profile</span>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            class="flex flex-col p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 group h-full"
+          >
+            <div class="flex justify-between items-start mb-5">
+              <div
+                class="flex items-center justify-center size-12 rounded-lg bg-[#111a22] border border-[#233648] text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300"
+              >
+                <span class="material-symbols-outlined text-[24px]"
+                  >account_tree</span
+                >
+              </div>
+              <div class="flex gap-2">
+                <a
+                  class="flex items-center justify-center size-9 rounded-full bg-[#111a22] border border-[#233648] text-gray-400 hover:text-white hover:border-gray-500 transition-colors"
+                  href="https://github.com/bbalbayrak/rabbitMQ-Microservice"
+                  title="Source Code"
+                  target="_blank"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >code</span
+                  >
+                </a>
+              </div>
+            </div>
+            <h3
+              class="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors"
+            >
+              rabbitMQ-Microservice
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+              A microservices-based architecture demonstrating asynchronous
+              communication between services using RabbitMQ. This project
+              features a robust message broker implementation to handle
+              background tasks, ensuring high availability and decoupled system
+              components.
+            </p>
+            <div
+              class="flex flex-wrap gap-2 pt-4 border-t border-[#233648]/50 mt-auto"
+            >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >RabbitMQ</span
+              >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >Microservices</span
+              >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >NestJs</span
+              >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >Message Broker</span
+              >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >Docker</span
+              >
+            </div>
+          </div>
+          <div
+            class="flex flex-col p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 group h-full"
+          >
+            <div class="flex justify-between items-start mb-5">
+              <div
+                class="flex items-center justify-center size-12 rounded-lg bg-[#111a22] border border-[#233648] text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300"
+              >
+                <span class="material-symbols-outlined text-[24px]"
+                  >psychology</span
+                >
+              </div>
+              <div class="flex gap-2">
+                <a
+                  class="flex items-center justify-center size-9 rounded-full bg-[#111a22] border border-[#233648] text-gray-400 hover:text-white hover:border-gray-500 transition-colors"
+                  href="https://github.com/bbalbayrak/AIAM"
+                  title="Source Code"
+                  target="_blank"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >code</span
+                  >
+                </a>
+              </div>
+            </div>
+            <h3
+              class="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors"
+            >
+              AIAM
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+              An AI-powered asset management system designed to optimize
+              resource allocation and tracking. Built with a focus on data
+              integrity and intelligent automation, the backend handles complex
+              analysis to provide actionable insights for asset lifecycle
+              management.
+            </p>
+            <div
+              class="flex flex-wrap gap-2 pt-4 border-t border-[#233648]/50 mt-auto"
+            >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >NestJs</span
+              >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >Data Analytics</span
+              >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >Docker</span
+              >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >REST API</span
+              >
+            </div>
+          </div>
+          <div
+            class="flex flex-col p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 group h-full"
+          >
+            <div class="flex justify-between items-start mb-5">
+              <div
+                class="flex items-center justify-center size-12 rounded-lg bg-[#111a22] border border-[#233648] text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300"
+              >
+                <span class="material-symbols-outlined text-[24px]">chat</span>
+              </div>
+              <div class="flex gap-2">
+                <a
+                  class="flex items-center justify-center size-9 rounded-full bg-[#111a22] border border-[#233648] text-gray-400 hover:text-white hover:border-gray-500 transition-colors"
+                  href="https://github.com/bbalbayrak/ChatBot"
+                  title="Source Code"
+                  target="_blank"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >code</span
+                  >
+                </a>
+              </div>
+            </div>
+            <h3
+              class="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors"
+            >
+              Chat Bot
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+              A full-stack AI assistant application integrated with OpenAI's GPT
+              models. It features a robust backend architecture for handling API
+              requests, secure environment management, and seamless
+              communication between the client and AI services to provide
+              real-time, intelligent responses.
+            </p>
+            <div
+              class="flex flex-wrap gap-2 pt-4 border-t border-[#233648]/50 mt-auto"
+            >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >OpenAI API</span
+              >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >NestJs</span
+              >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >API Integration</span
+              >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >React.js</span
+              >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >Tailwind CSS</span
+              >
+            </div>
+          </div>
+          <div
+            class="flex flex-col p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 group h-full"
+          >
+            <div class="flex justify-between items-start mb-5">
+              <div
+                class="flex items-center justify-center size-12 rounded-lg bg-[#111a22] border border-[#233648] text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300"
+              >
+                <span class="material-symbols-outlined text-[24px]"
+                  >storefront</span
+                >
+              </div>
+              <div class="flex gap-2">
+                <a
+                  class="flex items-center justify-center size-9 rounded-full bg-[#111a22] border border-[#233648] text-gray-400 hover:text-white hover:border-gray-500 transition-colors"
+                  href="https://github.com/bbalbayrak/Market-Place"
+                  title="Source Code"
+                  target="_blank"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >code</span
+                  >
+                </a>
+              </div>
+            </div>
+            <h3
+              class="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors"
+            >
+              Market Place
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+              A comprehensive full-stack marketplace platform built with the
+              MERN stack. I engineered a secure backend using Node.js and
+              Express, implementing JWT-based authentication and complex
+              Mongoose schemas to manage multi-vendor product listings, user
+              roles, and secure data transactions.
+            </p>
+            <div
+              class="flex flex-wrap gap-2 pt-4 border-t border-[#233648]/50 mt-auto"
+            >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >Node.js</span
+              >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >Express.js</span
+              >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >MongoDB / Mongoose</span
+              >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >JWT Authentication</span
+              >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >REST API Design</span
+              >
+              <span
+                class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
+                >MVC Architecture</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="skills"
+      class="w-full bg-background-dark border-b border-border-dark"
+    >
+      <div class="layout-container flex h-full grow flex-col font-display">
+        <div class="px-4 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+          <div
+            class="layout-content-container flex flex-col max-w-[960px] flex-1"
+          >
+            <div class="flex flex-wrap justify-between gap-3 p-4 mt-4">
+              <div class="flex min-w-72 flex-col gap-3">
+                <h1
+                  class="text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]"
+                >
+                  Technology Skills
+                </h1>
+              </div>
+            </div>
+
+            <div class="flex gap-3 p-4 flex-wrap overflow-x-auto pb-6">
+              <button
+                onclick="filterSkills('all')"
+                class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary text-white pl-4 pr-4 transition-all"
+                id="btn-all"
+              >
+                <p class="text-xs font-bold leading-normal">All</p>
+              </button>
+              <button
+                onclick="filterSkills('frontend')"
+                class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#233648] hover:bg-[#2f455a] pl-4 pr-4 transition-all group"
+                id="btn-frontend"
+              >
+                <span
+                  class="material-symbols-outlined text-[16px] text-text-muted group-hover:text-white"
+                  >web</span
+                >
+                <p
+                  class="text-text-muted group-hover:text-white text-xs font-medium leading-normal"
+                >
+                  Frontend
+                </p>
+              </button>
+              <button
+                onclick="filterSkills('backend')"
+                class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#233648] hover:bg-[#2f455a] pl-4 pr-4 transition-all group"
+                id="btn-backend"
+              >
+                <span
+                  class="material-symbols-outlined text-[16px] text-text-muted group-hover:text-white"
+                  >dns</span
+                >
+                <p
+                  class="text-text-muted group-hover:text-white text-xs font-medium leading-normal"
+                >
+                  Backend
+                </p>
+              </button>
+              <button
+                onclick="filterSkills('devops')"
+                class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#233648] hover:bg-[#2f455a] pl-4 pr-4 transition-all group"
+                id="btn-devops"
+              >
+                <span
+                  class="material-symbols-outlined text-[16px] text-text-muted group-hover:text-white"
+                  >cloud_queue</span
+                >
+                <p
+                  class="text-text-muted group-hover:text-white text-xs font-medium leading-normal"
+                >
+                  DevOps
+                </p>
+              </button>
+              <button
+                onclick="filterSkills('database')"
+                class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#233648] hover:bg-[#2f455a] pl-4 pr-4 transition-all group"
+                id="btn-database"
+              >
+                <span
+                  class="material-symbols-outlined text-[16px] text-text-muted group-hover:text-white"
+                  >storage</span
+                >
+                <p
+                  class="text-text-muted group-hover:text-white text-xs font-medium leading-normal"
+                >
+                  Database
+                </p>
+              </button>
+            </div>
+
+            <!-- Frontend Geliştirme Bölümü -->
+            <div class="mt-2 skill-section" id="frontend-section">
+              <div
+                class="flex items-center gap-2 px-4 pb-2 pt-4 border-b border-[#233648] mb-4"
+              >
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >web</span
+                >
+                <h2
+                  class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"
+                >
+                  Frontend Development
+                </h2>
+              </div>
+              <div
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 px-4"
+              >
+                <div
+                  class="bg-[#233648] rounded-lg p-3 border border-transparent hover:border-primary/50 card-hover-effect transition-all duration-300 group flex flex-col justify-between min-h-[140px]"
+                >
+                  <div>
+                    <div class="flex justify-between items-start mb-2">
+                      <div
+                        class="size-9 rounded-md bg-[#111a22] flex items-center justify-center group-hover:bg-primary/20 transition-colors"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[#61dafb] text-xl"
+                          >responsive_layout</span
+                        >
+                      </div>
+                      <span
+                        class="bg-[#111a22] text-text-muted text-[10px] font-semibold px-1.5 py-0.5 rounded"
+                        >3+ Years</span
+                      >
+                    </div>
+                    <h3 class="text-white text-sm font-bold mb-1">ReactJS</h3>
+                    <p
+                      class="text-text-muted text-xs leading-snug line-clamp-2"
+                    >
+                      Modern UI, Hooks, Context API.
+                    </p>
+                  </div>
+                  <div class="w-full bg-[#111a22] rounded-full h-1 mt-3">
+                    <div
+                      class="bg-[#61dafb] h-1 rounded-full"
+                      style="width: 80%"
+                    ></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-[#233648] rounded-lg p-3 border border-transparent hover:border-primary/50 card-hover-effect transition-all duration-300 group flex flex-col justify-between min-h-[140px]"
+                >
+                  <div>
+                    <div class="flex justify-between items-start mb-2">
+                      <div
+                        class="size-9 rounded-md bg-[#111a22] flex items-center justify-center group-hover:bg-primary/20 transition-colors"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[#3178c6] text-xl"
+                          >integration_instructions</span
+                        >
+                      </div>
+                      <span
+                        class="bg-[#111a22] text-text-muted text-[10px] font-semibold px-1.5 py-0.5 rounded"
+                        >4+ Years</span
+                      >
+                    </div>
+                    <h3 class="text-white text-sm font-bold mb-1">
+                      TypeScript
+                    </h3>
+                    <p
+                      class="text-text-muted text-xs leading-snug line-clamp-2"
+                    >
+                      Type-safe code structure, interfaces.
+                    </p>
+                  </div>
+                  <div class="w-full bg-[#111a22] rounded-full h-1 mt-3">
+                    <div
+                      class="bg-[#3178c6] h-1 rounded-full"
+                      style="width: 95%"
+                    ></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-[#233648] rounded-lg p-3 border border-transparent hover:border-primary/50 card-hover-effect transition-all duration-300 group flex flex-col justify-between min-h-[140px]"
+                >
+                  <div>
+                    <div class="flex justify-between items-start mb-2">
+                      <div
+                        class="size-9 rounded-md bg-[#111a22] flex items-center justify-center group-hover:bg-primary/20 transition-colors"
+                      >
+                        <svg
+                          class="w-6 h-6 text-[#f7df1e]"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"
+                          />
+                        </svg>
+                      </div>
+                      <span
+                        class="bg-[#111a22] text-text-muted text-[10px] font-semibold px-1.5 py-0.5 rounded"
+                        >4+ Years</span
+                      >
+                    </div>
+                    <h3 class="text-white text-sm font-bold mb-1">
+                      JavaScript
+                    </h3>
+                    <p
+                      class="text-text-muted text-xs leading-snug line-clamp-2"
+                    >
+                      ES6+, Asynchronous programming, DOM manipulation.
+                    </p>
+                  </div>
+                  <div class="w-full bg-[#111a22] rounded-full h-1 mt-3">
+                    <div
+                      class="bg-[#f7df1e] h-1 rounded-full"
+                      style="width: 95%"
+                    ></div>
+                  </div>
+                </div>
+                <div
+                  class="bg-[#233648] rounded-lg p-3 border border-transparent hover:border-primary/50 card-hover-effect transition-all duration-300 group flex flex-col justify-between min-h-[140px]"
+                >
+                  <div>
+                    <div class="flex justify-between items-start mb-2">
+                      <div
+                        class="size-9 rounded-md bg-[#111a22] flex items-center justify-center group-hover:bg-primary/20 transition-colors"
+                      >
+                        <span
+                          class="material-symbols-outlined text-white text-xl"
+                          >Ads_Click</span
+                        >
+                      </div>
+                      <span
+                        class="bg-[#111a22] text-text-muted text-[10px] font-semibold px-1.5 py-0.5 rounded"
+                        >1+ Years</span
+                      >
+                    </div>
+                    <h3 class="text-white text-sm font-bold mb-1">NextJS</h3>
+                    <p
+                      class="text-text-muted text-xs leading-snug line-clamp-2"
+                    >
+                      SSR, SSG, Routing ve API Routes.
+                    </p>
+                  </div>
+                  <div class="w-full bg-[#111a22] rounded-full h-1 mt-3">
+                    <div
+                      class="bg-white h-1 rounded-full"
+                      style="width: 60%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Backend Geliştirme Bölümü -->
+            <div class="mt-6 skill-section" id="backend-section">
+              <div
+                class="flex items-center gap-2 px-4 pb-2 pt-4 border-b border-[#233648] mb-4"
+              >
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >dns</span
+                >
+                <h2
+                  class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"
+                >
+                  Backend Development
+                </h2>
+              </div>
+              <div
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 px-4"
+              >
+                <div
+                  class="bg-[#233648] rounded-lg p-3 border border-transparent hover:border-primary/50 card-hover-effect transition-all duration-300 group flex flex-col justify-between min-h-[140px]"
+                >
+                  <div>
+                    <div class="flex justify-between items-start mb-2">
+                      <div
+                        class="size-9 rounded-md bg-[#111a22] flex items-center justify-center group-hover:bg-primary/20 transition-colors"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[#e0234e] text-xl"
+                          >layers</span
+                        >
+                      </div>
+                      <span
+                        class="bg-[#111a22] text-text-muted text-[10px] font-semibold px-1.5 py-0.5 rounded"
+                        >3+ Years</span
+                      >
+                    </div>
+                    <h3 class="text-white text-sm font-bold mb-1">NestJS</h3>
+                    <p
+                      class="text-text-muted text-xs leading-snug line-clamp-2"
+                    >
+                      Modular architecture, Microservices.
+                    </p>
+                    <div class="w-full bg-[#111a22] rounded-full h-1 mt-3">
+                      <div
+                        class="bg-[#e0234e] h-1 rounded-full"
+                        style="width: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1 mt-2">
+                    <span
+                      class="text-[9px] bg-[#111a22] text-[#92adc9] px-1.5 py-0.5 rounded"
+                      >REST API</span
+                    >
+                    <span
+                      class="text-[9px] bg-[#111a22] text-[#92adc9] px-1.5 py-0.5 rounded"
+                      >Microservices</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="bg-[#233648] rounded-lg p-3 border border-transparent hover:border-primary/50 card-hover-effect transition-all duration-300 group flex flex-col justify-between min-h-[140px]"
+                >
+                  <div>
+                    <div class="flex justify-between items-start mb-2">
+                      <div
+                        class="size-9 rounded-md bg-[#111a22] flex items-center justify-center group-hover:bg-primary/20 transition-colors"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[#00add8] text-xl"
+                          >terminal</span
+                        >
+                      </div>
+                      <span
+                        class="bg-[#111a22] text-text-muted text-[10px] font-semibold px-1.5 py-0.5 rounded"
+                        >1 Year</span
+                      >
+                    </div>
+                    <h3 class="text-white text-sm font-bold mb-1">GoLang</h3>
+                    <p
+                      class="text-text-muted text-xs leading-snug line-clamp-2"
+                    >
+                      High performance and Concurrency.
+                    </p>
+                    <div class="w-full bg-[#111a22] rounded-full h-1 mt-3">
+                      <div
+                        class="bg-[#00add8] h-1 rounded-full"
+                        style="width: 50%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1 mt-2">
+                    <span
+                      class="text-[9px] bg-[#111a22] text-[#92adc9] px-1.5 py-0.5 rounded"
+                      >Gin</span
+                    >
+                    <span
+                      class="text-[9px] bg-[#111a22] text-[#92adc9] px-1.5 py-0.5 rounded"
+                      >Fiber</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="bg-[#233648] rounded-lg p-3 border border-transparent hover:border-primary/50 card-hover-effect transition-all duration-300 group flex flex-col justify-between min-h-[140px]"
+                >
+                  <div>
+                    <div class="flex justify-between items-start mb-2">
+                      <div
+                        class="size-9 rounded-md bg-[#111a22] flex items-center justify-center group-hover:bg-primary/20 transition-colors"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[#ff6600] text-xl"
+                          >move_up</span
+                        >
+                      </div>
+                      <span
+                        class="bg-[#111a22] text-text-muted text-[10px] font-semibold px-1.5 py-0.5 rounded"
+                        >2 Years</span
+                      >
+                    </div>
+                    <h3 class="text-white text-sm font-bold mb-1">RabbitMQ</h3>
+                    <p
+                      class="text-text-muted text-xs leading-snug line-clamp-2"
+                    >
+                      Asynchronous tasks, Message queuing.
+                    </p>
+                    <div class="w-full bg-[#111a22] rounded-full h-1 mt-3">
+                      <div
+                        class="bg-[#ff6600] h-1 rounded-full"
+                        style="width: 75%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1 mt-2">
+                    <span
+                      class="text-[9px] bg-[#111a22] text-[#92adc9] px-1.5 py-0.5 rounded"
+                      >Message Queuing</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="bg-[#233648] rounded-lg p-3 border border-transparent hover:border-primary/50 card-hover-effect transition-all duration-300 group flex flex-col justify-between min-h-[140px]"
+                >
+                  <div>
+                    <div class="flex justify-between items-start mb-2">
+                      <div
+                        class="size-9 rounded-md bg-[#111a22] flex items-center justify-center group-hover:bg-primary/20 transition-colors"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[#ffe873] text-xl"
+                          >database</span
+                        >
+                      </div>
+                      <span
+                        class="bg-[#111a22] text-text-muted text-[10px] font-semibold px-1.5 py-0.5 rounded"
+                        >4+ Years</span
+                      >
+                    </div>
+                    <h3 class="text-white text-sm font-bold mb-1">SQL</h3>
+                    <p
+                      class="text-text-muted text-xs leading-snug line-clamp-2"
+                    >
+                      Complex queries, relational modeling, and data integrity.
+                    </p>
+                    <div class="w-full bg-[#111a22] rounded-full h-1 mt-3">
+                      <div
+                        class="bg-[#ffe873] h-1 rounded-full"
+                        style="width: 90%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap gap-1 mt-2">
+                    <span
+                      class="text-[9px] bg-[#111a22] text-[#92adc9] px-1.5 py-0.5 rounded"
+                      >SQL</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Database and DevOps Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 px-4">
+              <!-- Database part -->
+              <div class="skill-section" id="database-section">
+                <div
+                  class="flex items-center gap-2 px-0 pb-2 pt-2 border-b border-[#233648] mb-3"
+                >
+                  <span class="material-symbols-outlined text-primary text-xl"
+                    >storage</span
+                  >
+                  <h2
+                    class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"
+                  >
+                    Database
+                  </h2>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                  <div
+                    class="flex flex-col gap-2 bg-[#233648] p-3 rounded-lg border border-transparent hover:border-primary/30 transition-all"
+                  >
+                    <div class="flex items-center justify-between">
+                      <div
+                        class="size-8 rounded bg-[#111a22] flex items-center justify-center shrink-0"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[#336791] text-lg"
+                          >database</span
+                        >
+                      </div>
+                      <span
+                        class="text-[10px] bg-[#111a22] text-text-muted px-1.5 py-0.5 rounded"
+                        >SQL</span
+                      >
+                    </div>
+                    <div>
+                      <h4 class="text-white font-bold text-sm">PostgreSQL</h4>
+                      <p class="text-text-muted text-[10px] leading-tight mt-1">
+                        Advanced relational management and indexing.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col gap-2 bg-[#233648] p-3 rounded-lg border border-transparent hover:border-primary/30 transition-all"
+                  >
+                    <div class="flex items-center justify-between">
+                      <div
+                        class="size-8 rounded bg-[#111a22] flex items-center justify-center shrink-0"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[#47a248] text-lg"
+                          >schema</span
+                        >
+                      </div>
+                      <span
+                        class="text-[10px] bg-[#111a22] text-text-muted px-1.5 py-0.5 rounded"
+                        >NoSQL</span
+                      >
+                    </div>
+                    <div>
+                      <h4 class="text-white font-bold text-sm">MongoDB</h4>
+                      <p class="text-text-muted text-[10px] leading-tight mt-1">
+                        Flexible document-based NoSQL architecture.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col gap-2 bg-[#233648] p-3 rounded-lg border border-transparent hover:border-primary/30 transition-all"
+                  >
+                    <div class="flex items-center justify-between">
+                      <div
+                        class="size-8 rounded bg-[#111a22] flex items-center justify-center shrink-0"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[#d82c20] text-lg"
+                          >memory</span
+                        >
+                      </div>
+                      <span
+                        class="text-[10px] bg-[#111a22] text-text-muted px-1.5 py-0.5 rounded"
+                        >Cache</span
+                      >
+                    </div>
+                    <div>
+                      <h4 class="text-white font-bold text-sm">Redis</h4>
+                      <p class="text-text-muted text-[10px] leading-tight mt-1">
+                        High-speed caching and in-memory data structures.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col gap-2 bg-[#233648] p-3 rounded-lg border border-transparent hover:border-primary/30 transition-all"
+                  >
+                    <div class="flex items-center justify-between">
+                      <div
+                        class="size-8 rounded bg-[#111a22] flex items-center justify-center shrink-0"
+                      >
+                        <span
+                          class="material-symbols-outlined text-[#00758f] text-lg"
+                          >database</span
+                        >
+                      </div>
+                      <span
+                        class="text-[10px] bg-[#111a22] text-text-muted px-1.5 py-0.5 rounded"
+                        >SQL</span
+                      >
+                    </div>
+                    <div>
+                      <h4 class="text-white font-bold text-sm">MySQL</h4>
+                      <p class="text-text-muted text-[10px] leading-tight mt-1">
+                        Standard relational database management.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DevOps part -->
+              <div class="skill-section" id="devops-section">
+                <div
+                  class="flex items-center gap-2 px-0 pb-2 pt-2 border-b border-[#233648] mb-3"
+                >
+                  <span class="material-symbols-outlined text-primary text-xl"
+                    >cloud_queue</span
+                  >
+                  <h2
+                    class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"
+                  >
+                    DevOps & Tools
+                  </h2>
+                </div>
+                <div class="grid grid-cols-3 gap-3">
+                  <div
+                    class="bg-[#233648] p-3 rounded-lg text-center hover:bg-[#2f455a] transition-colors border border-transparent hover:border-primary/30 flex flex-col items-center justify-center h-full"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[#2496ed] text-2xl mb-1.5"
+                      >deployed_code</span
+                    >
+                    <h4 class="text-white font-bold text-xs">Docker</h4>
+                  </div>
+                  <div
+                    class="bg-[#233648] p-3 rounded-lg text-center hover:bg-[#2f455a] transition-colors border border-transparent hover:border-primary/30 flex flex-col items-center justify-center h-full"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[#ff9900] text-2xl mb-1.5"
+                      >cloud</span
+                    >
+                    <h4 class="text-white font-bold text-xs">AWS</h4>
+                  </div>
+                  <div
+                    class="bg-[#233648] p-3 rounded-lg text-center hover:bg-[#2f455a] transition-colors border border-transparent hover:border-primary/30 flex flex-col items-center justify-center h-full"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[#f05032] text-2xl mb-1.5"
+                      >call_merge</span
+                    >
+                    <h4 class="text-white font-bold text-xs">Git</h4>
+                  </div>
+                  <div
+                    class="bg-[#233648] p-3 rounded-lg text-center hover:bg-[#2f455a] transition-colors border border-transparent hover:border-primary/30 flex flex-col items-center justify-center h-full"
+                  >
+                    <span
+                      class="material-symbols-outlined text-white text-2xl mb-1.5"
+                      >terminal</span
+                    >
+                    <h4 class="text-white font-bold text-xs">Linux</h4>
+                  </div>
+                  <div
+                    class="bg-[#233648] p-3 rounded-lg text-center hover:bg-[#2f455a] transition-colors border border-transparent hover:border-primary/30 flex flex-col items-center justify-center h-full"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[#2088ff] text-2xl mb-1.5"
+                      >rocket_launch</span
+                    >
+                    <h4 class="text-white font-bold text-xs">CI/CD</h4>
+                  </div>
+                  <div
+                    class="bg-[#233648] p-3 rounded-lg text-center hover:bg-[#2f455a] transition-colors border border-transparent hover:border-primary/30 flex flex-col items-center justify-center h-full"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[#326ce5] text-2xl mb-1.5"
+                      >anchor</span
+                    >
+                    <h4 class="text-white font-bold text-xs">K8s</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-12 mb-8 px-4 flex justify-center">
+              <p class="text-[#92adc9] text-xs text-center">
+                © 2026 Bilal Burak Albayrak.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        filterSkills("all");
+      });
+
+      function filterSkills(category) {
+        const sections = document.querySelectorAll(".skill-section");
+        const buttons = document.querySelectorAll(
+          'button[onclick^="filterSkills"]'
+        );
+
+        buttons.forEach((button) => {
+          button.classList.remove("bg-primary", "text-white");
+          button.classList.add("bg-[#233648]", "text-text-muted");
+
+          const span = button.querySelector("span");
+          const p = button.querySelector("p");
+
+          if (span) {
+            span.classList.remove("text-white");
+            span.classList.add("text-text-muted");
+          }
+
+          if (p) {
+            p.classList.remove("text-white");
+            p.classList.add("text-text-muted");
+          }
+        });
+
+        const activeButton = document.getElementById(`btn-${category}`);
+        if (activeButton) {
+          activeButton.classList.remove("bg-[#233648]", "text-text-muted");
+          activeButton.classList.add("bg-primary", "text-white");
+
+          const activeSpan = activeButton.querySelector("span");
+          const activeP = activeButton.querySelector("p");
+
+          if (activeSpan) {
+            activeSpan.classList.remove("text-text-muted");
+            activeSpan.classList.add("text-white");
+          }
+
+          if (activeP) {
+            activeP.classList.remove("text-text-muted");
+            activeP.classList.add("text-white");
+          }
+        }
+
+        if (category === "all") {
+          sections.forEach((section) => {
+            section.style.display = "block";
+          });
+        } else {
+          sections.forEach((section) => {
+            if (section.id === `${category}-section`) {
+              section.style.display = "block";
+            } else {
+              section.style.display = "none";
+            }
+          });
+        }
+      }
+    </script>
+
+    <style>
+      .skill-section {
+        transition: all 0.3s ease;
+      }
+      @media (max-width: 768px) {
+        .skill-section {
+          margin-top: 1rem !important;
+        }
+      }
+    </style>
+
+    <div
+      class="w-full py-8 px-5 text-center bg-surface-dark border-t border-border-dark"
+    >
+      <div class="max-w-[600px] mx-auto flex flex-col gap-6 items-center">
+        <div class="flex gap-6 mt-10">
+          <!-- LinkedIn Bağlantısı -->
+          <a
+            class="text-slate-400 hover:text-white transition-colors"
+            href="https://www.linkedin.com/in/bbalbayrak"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="sr-only">LinkedIn</span>
+            <div class="size-6">
+              <svg
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <!-- GitHub Bağlantısı -->
+          <a
+            class="text-slate-400 hover:text-white transition-colors"
+            href="https://www.github.com/bbalbayrak"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="sr-only">GitHub</span>
+            <div class="size-6">
+              <svg
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.419-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                ></path>
+              </svg>
+            </div>
+          </a>
+          <!-- E-mail Connection -->
+          <a
+            class="text-slate-400 hover:text-white transition-colors"
+            href="mailto:bbalbayrakk@gmail.com"
+            rel="noopener noreferrer"
+          >
+            <span class="sr-only">Email</span>
+            <div class="size-6">
+              <svg
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+            </div>
+          </a>
+        </div>
+        <div class="mt-8 text-xs text-slate-500">
+          © 2026 Bilal Burak Albayrak. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
