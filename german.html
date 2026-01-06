@@ -33,358 +33,174 @@
       href="./bba/apple-touch-icon.png"
     />
     <link rel="manifest" href="./bba/site.webmanifest" />
+    <link rel="stylesheet" href="german.style.css" />
 
     <script src="tailwind.config.js"></script>
-    <style>
-      .animation-delay-2000 {
-        animation-delay: 2s;
-      }
-      .animation-delay-3000 {
-        animation-delay: 3s;
-      }
-      .animation-delay-4000 {
-        animation-delay: 4s;
-      }
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #101922;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #233648;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #2b8cee;
-      }
-      .card-hover-effect:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 15px -3px rgba(43, 140, 238, 0.1),
-          0 4px 6px -2px rgba(43, 140, 238, 0.05);
-      }
-
-      .holographic-grid {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-              90deg,
-              rgba(43, 140, 238, 0.03) 1px,
-              transparent 1px
-            )
-            0 0 / 50px 50px,
-          linear-gradient(rgba(43, 140, 238, 0.03) 1px, transparent 1px) 0 0 /
-            50px 50px;
-        mask-image: radial-gradient(
-          ellipse 80% 50% at 50% 50%,
-          black 30%,
-          transparent 70%
-        );
-        animation: gridFlow 20s linear infinite;
-      }
-
-      .neural-network {
-        position: absolute;
-        inset: 0;
-        overflow: hidden;
-      }
-
-      .neural-line {
-        position: absolute;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(43, 140, 238, 0.3),
-          transparent
-        );
-        height: 1px;
-        transform-origin: left center;
-        animation: neuralFlow 8s linear infinite;
-      }
-
-      @keyframes neuralFlow {
-        0% {
-          transform: translateX(-100%) scaleX(0);
-          opacity: 0;
-        }
-        10% {
-          opacity: 1;
-        }
-        90% {
-          opacity: 1;
-        }
-        100% {
-          transform: translateX(100vw) scaleX(1);
-          opacity: 0;
-        }
-      }
-
-      .quantum-particles {
-        position: absolute;
-        inset: 0;
-      }
-
-      .quantum-particle {
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        background: rgba(43, 140, 238, 0.8);
-        border-radius: 50%;
-        filter: blur(1px);
-        box-shadow: 0 0 10px 2px rgba(43, 140, 238, 0.6),
-          0 0 20px 5px rgba(43, 140, 238, 0.3);
-        animation: particleFloat 15s linear infinite;
-      }
-
-      .data-stream {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-      }
-
-      .data-bit {
-        position: absolute;
-        font-family: monospace;
-        color: rgba(43, 140, 238, 0.4);
-        font-size: 14px;
-        opacity: 0;
-        animation: dataFall 10s linear infinite;
-      }
-
-      @keyframes dataFall {
-        0% {
-          transform: translateY(-100px) rotate(0deg);
-          opacity: 0;
-        }
-        10% {
-          opacity: 1;
-        }
-        90% {
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(100vh) rotate(360deg);
-          opacity: 0;
-        }
-      }
-
-      .cosmic-dust {
-        position: absolute;
-        inset: 0;
-      }
-
-      .dust-particle {
-        position: absolute;
-        width: 3px;
-        height: 3px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        filter: blur(0.5px);
-        animation: dustFloat 20s linear infinite;
-      }
-
-      @keyframes dustFloat {
-        0% {
-          transform: translate(0, 0) rotate(0deg);
-          opacity: 0;
-        }
-        10% {
-          opacity: 0.5;
-        }
-        90% {
-          opacity: 0.5;
-        }
-        100% {
-          transform: translate(100px, -100px) rotate(180deg);
-          opacity: 0;
-        }
-      }
-
-      .cube-grid {
-        position: absolute;
-        inset: 0;
-        perspective: 1000px;
-        transform-style: preserve-3d;
-      }
-
-      .cube {
-        position: absolute;
-        width: 60px;
-        height: 60px;
-        transform-style: preserve-3d;
-        animation: cubeRotate 40s linear infinite;
-      }
-
-      .cube-face {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border: 1px solid rgba(43, 140, 238, 0.2);
-        background: rgba(43, 140, 238, 0.05);
-      }
-
-      .cube-face.front {
-        transform: translateZ(30px);
-      }
-      .cube-face.back {
-        transform: translateZ(-30px) rotateY(180deg);
-      }
-      .cube-face.right {
-        transform: rotateY(90deg) translateZ(30px);
-      }
-      .cube-face.left {
-        transform: rotateY(-90deg) translateZ(30px);
-      }
-      .cube-face.top {
-        transform: rotateX(90deg) translateZ(30px);
-      }
-      .cube-face.bottom {
-        transform: rotateX(-90deg) translateZ(30px);
-      }
-
-      @keyframes cubeRotate {
-        0% {
-          transform: rotateX(0) rotateY(0) rotateZ(0);
-        }
-        100% {
-          transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-        }
-      }
-      .language-switcher {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
-      }
-
-      .language-btn {
-        background: rgba(30, 41, 59, 0.9);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: white;
-        padding: 10px 20px;
-        border-radius: 50px;
-        font-weight: 600;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      }
-
-      .language-btn:hover {
-        background: rgba(30, 41, 59, 1);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
-      }
-
-      .language-dropdown {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        margin-top: 10px;
-        background: rgba(30, 41, 59, 0.95);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        padding: 8px;
-        min-width: 150px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-      }
-
-      .language-dropdown.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      .language-option {
-        padding: 12px 16px;
-        color: #e2e8f0;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .language-option:hover {
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-      }
-
-      .language-option.active {
-        background: rgba(59, 130, 246, 0.3);
-        color: #60a5fa;
-      }
-
-      .flag-icon {
-        width: 24px;
-        height: 16px;
-        border-radius: 2px;
-        object-fit: cover;
-      }
-
-      /* Karanlık tema desteği */
-      .dark .language-btn {
-        background: rgba(15, 23, 42, 0.9);
-      }
-
-      .dark .language-dropdown {
-        background: rgba(15, 23, 42, 0.95);
-      }
-    </style>
   </head>
   <body
     class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased overflow-x-hidden"
   >
     <script src="language.js"></script>
-    <div class="language-switcher">
-      <button class="language-btn" id="languageToggle">
-        <img
-          src="https://flagcdn.com/w40/gb.png"
-          alt="English"
-          class="flag-icon"
-        />
-        <span>EN</span>
-        <span class="material-symbols-outlined">expand_more</span>
-      </button>
+    <nav
+      class="w-full py-3 px-4 md:px-6 flex justify-between items-center border-b border-border-dark"
+    >
+      <div class="text-lg md:text-xl font-bold">Bilal Burak Albayrak</div>
 
-      <div class="language-dropdown" id="languageDropdown">
-        <div class="language-option" data-lang="en">
-          <img
-            src="https://flagcdn.com/w40/gb.png"
-            alt="English"
-            class="flag-icon"
-          />
-          <span>English</span>
+      <!-- Desktop menü -->
+      <div class="hidden md:flex gap-4 items-center desktop-nav-links">
+        <a href="#home" class="hover:text-blue-400 transition-colors">Home</a>
+        <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+        <a href="#career" class="hover:text-blue-400 transition-colors"
+          >Education</a
+        >
+        <a href="#experience" class="hover:text-blue-400 transition-colors"
+          >Experience</a
+        >
+        <a href="#projects" class="hover:text-blue-400 transition-colors"
+          >Projects</a
+        >
+        <a href="#skills" class="hover:text-blue-400 transition-colors"
+          >Tech Stack</a
+        >
+
+        <!-- Desktop dil seçici -->
+        <div class="language-switcher desktop-language-switcher">
+          <button class="language-btn" id="languageToggle">
+            <img
+              src="https://flagcdn.com/w40/gb.png"
+              alt="English"
+              class="flag-icon"
+            />
+            <span>EN</span>
+            <span class="material-symbols-outlined text-sm">expand_more</span>
+          </button>
+          <div class="language-dropdown" id="languageDropdown">
+            <div class="language-option active" data-lang="en">
+              <img
+                src="https://flagcdn.com/w40/gb.png"
+                alt="English"
+                class="flag-icon"
+              />
+              <span>English</span>
+            </div>
+            <div class="language-option" data-lang="tr">
+              <img
+                src="https://flagcdn.com/w40/tr.png"
+                alt="Türkçe"
+                class="flag-icon"
+              />
+              <span>Türkçe</span>
+            </div>
+            <div class="language-option" data-lang="de">
+              <img
+                src="https://flagcdn.com/w40/de.png"
+                alt="Deutsch"
+                class="flag-icon"
+              />
+              <span>Deutsch</span>
+            </div>
+          </div>
         </div>
-        <div class="language-option" data-lang="tr">
-          <img
-            src="https://flagcdn.com/w40/tr.png"
-            alt="Türkçe"
-            class="flag-icon"
-          />
-          <span>Türkçe</span>
-        </div>
-        <div class="language-option" data-lang="de">
-          <img
-            src="https://flagcdn.com/w40/de.png"
-            alt="Deutsch"
-            class="flag-icon"
-          />
-          <span>Deutsch</span>
+
+        <button
+          class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md transition-colors"
+        >
+          Resume
+        </button>
+      </div>
+
+      <!-- Hamburger butonu (mobil için) -->
+      <button class="hamburger-btn md:hidden" id="hamburgerBtn">
+        <span class="hamburger-icon"></span>
+      </button>
+    </nav>
+
+    <!-- Mobil menü -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-nav-links">
+        <a href="#intro-1" class="mobile-nav-link" onclick="closeMobileMenu()">
+          <span class="material-symbols-outlined">home</span>
+          <span>Home</span>
+        </a>
+        <a href="#about" class="mobile-nav-link" onclick="closeMobileMenu()">
+          <span class="material-symbols-outlined">person</span>
+          <span>About</span>
+        </a>
+        <a href="#career" class="mobile-nav-link" onclick="closeMobileMenu()">
+          <span class="material-symbols-outlined">school</span>
+          <span>Education</span>
+        </a>
+        <a
+          href="#experience"
+          class="mobile-nav-link"
+          onclick="closeMobileMenu()"
+        >
+          <span class="material-symbols-outlined">work</span>
+          <span>Experience</span>
+        </a>
+        <a href="#projects" class="mobile-nav-link" onclick="closeMobileMenu()">
+          <span class="material-symbols-outlined">code</span>
+          <span>Projects</span>
+        </a>
+        <a href="#skills" class="mobile-nav-link" onclick="closeMobileMenu()">
+          <span class="material-symbols-outlined">layers</span>
+          <span>Tech Stack</span>
+        </a>
+      </div>
+
+      <!-- Mobil dil seçici -->
+      <div class="mobile-language-switcher">
+        <h3 class="text-white text-sm font-semibold mb-3">
+          Language / Dil / Sprache
+        </h3>
+        <div class="mobile-language-options">
+          <div
+            class="mobile-language-option active"
+            data-lang="en"
+            onclick="changeLanguage('en')"
+          >
+            <img
+              src="https://flagcdn.com/w40/gb.png"
+              alt="English"
+              class="flag-icon"
+            />
+            <span>English</span>
+          </div>
+          <div
+            class="mobile-language-option"
+            data-lang="tr"
+            onclick="changeLanguage('tr')"
+          >
+            <img
+              src="https://flagcdn.com/w40/tr.png"
+              alt="Türkçe"
+              class="flag-icon"
+            />
+            <span>Türkçe</span>
+          </div>
+          <div
+            class="mobile-language-option"
+            data-lang="de"
+            onclick="changeLanguage('de')"
+          >
+            <img
+              src="https://flagcdn.com/w40/de.png"
+              alt="Deutsch"
+              class="flag-icon"
+            />
+            <span>Deutsch</span>
+          </div>
         </div>
       </div>
+
+      <!-- Mobil için Resume butonu -->
+      <button
+        class="w-full mt-4 bg-blue-600 hover:bg-blue-700 py-3 rounded-md transition-colors text-white font-semibold"
+        onclick="closeMobileMenu()"
+      >
+        Resume / Lebenslauf / CV
+      </button>
     </div>
 
     <!-- Header -->
@@ -590,24 +406,26 @@
         class="absolute top-[40%] -left-[10%] h-[300px] w-[300px] rounded-full bg-blue-500/10 blur-[80px] pointer-events-none"
       ></div>
 
-      <div class="mx-auto max-w-[1280px] px-5">
+      <div class="mx-auto max-w-[1280px] px-4 sm:px-5">
         <div
-          class="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-20"
+          class="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-20"
         >
-          <div class="flex flex-col gap-8 flex-1 text-center lg:text-left z-10">
-            <div class="flex flex-col gap-4">
+          <div
+            class="flex flex-col gap-6 sm:gap-8 flex-1 text-center lg:text-left z-10"
+          >
+            <div class="flex flex-col gap-3 sm:gap-4">
               <h2
-                class="text-4xl md:text-5xl font-bold leading-[1.1] tracking-[-0.033em] text-slate-900 dark:text-white"
+                class="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.1] tracking-[-0.033em] text-slate-900 dark:text-white hyphens-auto"
               >
-                Skalierbare und robuste <br />
+                Skalierbare und robuste <br class="hidden sm:block" />
                 <span
                   class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400"
-                  >Backend</span
                 >
-                -Lösungen.
+                  Backend-Lösungen.
+                </span>
               </h2>
               <p
-                class="text-base md:text-lg leading-relaxed text-slate-500 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0"
+                class="text-sm sm:text-base md:text-lg leading-relaxed text-slate-500 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0 de-text hyphens-auto"
               >
                 Ich spezialisiere mich auf Microservices, Datenbankmanagement
                 und API-Entwicklung. Ich sorge für die Sicherheit Ihrer Daten
@@ -615,31 +433,34 @@
                 laufen.
               </p>
             </div>
-            <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+            <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
               <a
                 href="#about"
-                class="group flex items-center justify-center gap-2 rounded-lg bg-primary hover:bg-blue-600 px-6 py-3.5 text-base font-bold text-white transition-all shadow-lg"
+                class="group flex items-center justify-center gap-2 rounded-lg bg-primary hover:bg-blue-600 px-5 py-3 sm:px-6 sm:py-3.5 text-sm sm:text-base font-bold text-white transition-all shadow-lg"
               >
                 <span>Über mich</span>
                 <span
-                  class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform"
-                  >arrow_forward</span
+                  class="material-symbols-outlined text-[18px] sm:text-[20px] group-hover:translate-x-1 transition-transform"
                 >
+                  arrow_forward
+                </span>
               </a>
             </div>
 
             <div
-              class="mt-4 pt-8 border-t border-slate-200 dark:border-border-dark flex flex-col gap-4"
+              class="mt-4 sm:mt-6 pt-6 sm:pt-8 border-t border-slate-200 dark:border-border-dark flex flex-col gap-4"
             >
               <p
-                class="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500"
+                class="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 text-center lg:text-left"
               >
                 Bleib in Kontakt
               </p>
-              <div class="flex justify-center lg:justify-start gap-4">
+              <div
+                class="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4"
+              >
                 <!-- LinkedIn Card -->
                 <a
-                  class="group flex items-center gap-3 rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-border-dark p-3 hover:border-primary/50 transition-colors shadow-sm"
+                  class="group flex items-center gap-3 rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-border-dark p-3 hover:border-primary/50 transition-colors shadow-sm flex-1 min-w-[140px] max-w-[160px]"
                   href="https://www.linkedin.com/in/bbalbayrak/"
                   target="_blank"
                 >
@@ -730,9 +551,11 @@
           </div>
 
           <div
-            class="flex-1 w-full flex justify-center lg:justify-end relative"
+            class="flex-1 w-full flex justify-center lg:justify-end relative mb-8 lg:mb-0"
           >
-            <div class="relative w-full max-w-[500px] aspect-square">
+            <div
+              class="relative w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] aspect-square"
+            >
               <div
                 class="absolute inset-0 rounded-full border border-slate-200 dark:border-slate-800 scale-90"
               ></div>
@@ -1171,7 +994,7 @@
           </div>
 
           <div
-            class="relative flex flex-col md:flex-row-reverse items-center w-full group"
+            class="relative flex flex-col md:flex-row-reverse items-center w-full group pt-10"
           >
             <div class="hidden md:flex w-1/2 justify-start pl-12 pb-2">
               <span
@@ -2719,5 +2542,6 @@
         </div>
       </div>
     </div>
+    <script src="navbar.js"></script>
   </body>
 </html>
