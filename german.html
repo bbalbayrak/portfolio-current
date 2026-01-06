@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html class="dark scroll-smooth" lang="tr">
+<html class="dark scroll-smooth" lang="de">
   <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Portfolyo | Bilal Burak Albayrak</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Portfolio | Bilal Burak Albayrak</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
@@ -31,7 +35,6 @@
     <link rel="manifest" href="./bba/site.webmanifest" />
 
     <script src="tailwind.config.js"></script>
-    <script src="language.js"></script>
     <style>
       .animation-delay-2000 {
         animation-delay: 2s;
@@ -250,7 +253,6 @@
           transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
         }
       }
-      /* Dil Butonu Stilleri */
       .language-switcher {
         position: fixed;
         top: 20px;
@@ -345,7 +347,7 @@
   <body
     class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased overflow-x-hidden"
   >
-    <!-- Dil Değiştirici Butonu -->
+    <script src="language.js"></script>
     <div class="language-switcher">
       <button class="language-btn" id="languageToggle">
         <img
@@ -358,7 +360,7 @@
       </button>
 
       <div class="language-dropdown" id="languageDropdown">
-        <div class="language-option active" data-lang="en">
+        <div class="language-option" data-lang="en">
           <img
             src="https://flagcdn.com/w40/gb.png"
             alt="English"
@@ -384,6 +386,7 @@
         </div>
       </div>
     </div>
+
     <!-- Header -->
 
     <section
@@ -549,7 +552,7 @@
         >
           <span
             class="block text-2xl md:text-3xl font-medium text-slate-500 dark:text-slate-400 tracking-normal mb-3"
-            >Hello, I'm</span
+            >Hallo, ich bin</span
           >
           <span
             class="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-200 dark:to-white bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer"
@@ -559,14 +562,14 @@
         <p
           class="mb-12 text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-medium"
         >
-          Backend Developer
+          Backend-Entwickler
         </p>
         <div class="flex flex-col items-center gap-8 w-full">
           <a
             href="#intro-2"
             class="group relative flex items-center justify-center gap-3 rounded-full bg-primary hover:bg-blue-600 px-12 py-5 text-lg font-bold text-white transition-all shadow-lg hover:-translate-y-1"
           >
-            <span>More</span>
+            <span>Mehr erfahren</span>
             <span
               class="material-symbols-outlined text-[24px] group-hover:translate-x-1 transition-transform"
               >arrow_downward</span
@@ -596,19 +599,20 @@
               <h2
                 class="text-4xl md:text-5xl font-bold leading-[1.1] tracking-[-0.033em] text-slate-900 dark:text-white"
               >
-                Scalable & Robust <br />
+                Skalierbare und robuste <br />
                 <span
                   class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400"
                   >Backend</span
                 >
-                Solutions.
+                -Lösungen.
               </h2>
               <p
                 class="text-base md:text-lg leading-relaxed text-slate-500 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0"
               >
-                Specializing in Microservices, Database Management, and API
-                Development. I ensure your data is secure and your applications
-                run smoothly.
+                Ich spezialisiere mich auf Microservices, Datenbankmanagement
+                und API-Entwicklung. Ich sorge für die Sicherheit Ihrer Daten
+                und fokussiere mich darauf, dass Ihre Anwendungen zuverlässig
+                laufen.
               </p>
             </div>
             <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
@@ -616,7 +620,7 @@
                 href="#about"
                 class="group flex items-center justify-center gap-2 rounded-lg bg-primary hover:bg-blue-600 px-6 py-3.5 text-base font-bold text-white transition-all shadow-lg"
               >
-                <span>About Me</span>
+                <span>Über mich</span>
                 <span
                   class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform"
                   >arrow_forward</span
@@ -630,7 +634,7 @@
               <p
                 class="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500"
               >
-                Stay Connected
+                Bleib in Kontakt
               </p>
               <div class="flex justify-center lg:justify-start gap-4">
                 <!-- LinkedIn Card -->
@@ -658,7 +662,7 @@
                     >
                     <span
                       class="text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors"
-                      >Connect</span
+                      >Vernetzen</span
                     >
                   </div>
                 </a>
@@ -688,7 +692,7 @@
                     >
                     <span
                       class="text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors"
-                      >Follow</span
+                      >Folgen</span
                     >
                   </div>
                 </a>
@@ -713,11 +717,11 @@
                   </div>
                   <div class="flex flex-col text-left">
                     <span class="text-xs text-slate-500 dark:text-slate-400"
-                      >Email</span
+                      >E-Mail</span
                     >
                     <span
                       class="text-sm font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors"
-                      >Contact</span
+                      >Kontakt</span
                     >
                   </div>
                 </a>
@@ -762,7 +766,9 @@
                   <span class="material-symbols-outlined">logo_dev</span>
                 </div>
                 <div>
-                  <p class="text-xs text-slate-500 font-semibold">Expertise</p>
+                  <p class="text-xs text-slate-500 font-semibold">
+                    Schwerpunkt
+                  </p>
                   <p class="text-sm font-bold text-slate-900 dark:text-white">
                     Backend & Cloud
                   </p>
@@ -778,9 +784,9 @@
                   <span class="material-symbols-outlined">check_circle</span>
                 </div>
                 <div>
-                  <p class="text-xs text-slate-500 font-semibold">Success</p>
+                  <p class="text-xs text-slate-500 font-semibold">Erfolg</p>
                   <p class="text-sm font-bold text-slate-900 dark:text-white">
-                    Experience 3+ Years
+                    3+ Jahre Erfahrung
                   </p>
                 </div>
               </div>
@@ -806,21 +812,22 @@
             />
           </div>
           <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
-            Building the invisible engine of the web
+            Das unsichtbare Herz des Webs zu bauen ist
             <span
               class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400"
-              >is my passion.</span
+              >meine Leidenschaft.</span
             >
           </h2>
           <div
             class="max-w-[800px] space-y-6 text-slate-300 text-lg leading-relaxed font-body"
           >
             <p>
-              Hello! I'm Bilal Burak. I am a software developer passionate about
-              building scalable, secure, and high-performance server-side
-              systems. Instead of just focusing on what users see, I focus on
-              how the system works. I design robust APIs and manage complex data
-              structures to ensure seamless digital experiences.
+              Hallo! Ich bin Bilal Burak. Ich entwickle mit Leidenschaft
+              skalierbare, sichere und performante serverseitige Systeme. Ich
+              fokussiere mich nicht nur auf das, was Nutzer sehen, sondern
+              darauf, wie das System funktioniert. Für nahtlose digitale
+              Erlebnisse entwerfe ich robuste APIs und verwalte komplexe
+              Datenstrukturen.
             </p>
           </div>
         </div>
@@ -830,9 +837,9 @@
             <h2
               class="text-primary text-sm font-bold tracking-widest uppercase mb-2"
             >
-              Skills
+              Fähigkeiten
             </h2>
-            <h3 class="text-white text-3xl font-bold">My Expertise</h3>
+            <h3 class="text-white text-3xl font-bold">Meine Schwerpunkte</h3>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div
@@ -844,11 +851,11 @@
                 <span class="material-symbols-outlined text-[28px]">code</span>
               </div>
               <h4 class="text-lg font-bold text-white mb-2">
-                Backend Development
+                Backend-Entwicklung
               </h4>
               <p class="text-slate-400 text-sm">
-                Building robust and scalable architectures using [JavaScript /
-                TypeScript / NodeJs] and modern frameworks.
+                Entwicklung robuster und skalierbarer Architekturen mit
+                [JavaScript / TypeScript / NodeJs] und modernen Frameworks.
               </p>
             </div>
             <div
@@ -862,11 +869,11 @@
                 >
               </div>
               <h4 class="text-lg font-bold text-white mb-2">
-                Database & Architecture
+                Datenbanken & Architektur
               </h4>
               <p class="text-slate-400 text-sm">
-                Designing optimized database schemas (SQL/NoSQL) and ensuring
-                data integrity.
+                Design optimierter Datenbankschemata (SQL/NoSQL) und
+                Sicherstellung der Datenintegrität.
               </p>
             </div>
             <div
@@ -878,11 +885,11 @@
                 <span class="material-symbols-outlined text-[28px]">cloud</span>
               </div>
               <h4 class="text-lg font-bold text-white mb-2">
-                API & Cloud Services
+                APIs & Cloud-Services
               </h4>
               <p class="text-slate-400 text-sm">
-                Developing RESTful APIs / Microservices and managing cloud
-                deployments.
+                Entwicklung von RESTful APIs / Microservices und Verwaltung von
+                Cloud-Deployments.
               </p>
             </div>
           </div>
@@ -902,7 +909,7 @@
             <h1
               class="text-3xl md:text-4xl font-bold tracking-tight mb-2 text-white"
             >
-              Education Information
+              Bildungsweg
             </h1>
           </div>
         </div>
@@ -958,10 +965,10 @@
                     <div class="flex flex-col">
                       <span
                         class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold"
-                        >Degree</span
+                        >Abschluss</span
                       >
                       <span class="text-sm font-medium text-white"
-                        >Bachelor's (B.Sc.)</span
+                        >Bachelor (B.Sc.)</span
                       >
                     </div>
                     <div class="w-[1px] h-8 bg-[#233648]"></div>
@@ -971,7 +978,7 @@
                         >GPA</span
                       >
                       <span class="text-sm font-medium text-white"
-                        >3.02 / 4.00 (Honor Student)</span
+                        >3.02 / 4.00 (Ehrenstudent)</span
                       >
                     </div>
                   </div>
@@ -979,7 +986,6 @@
               </div>
             </div>
 
-            <!-- İkinci eğitim: Selcuk University (sağda) -->
             <div
               class="relative flex flex-col md:flex-row-reverse items-center w-full group"
             >
@@ -1007,7 +1013,7 @@
                       <h3 class="text-xl font-bold text-white">
                         Computer Engineering
                       </h3>
-                      <p class="text-primary font-medium">Selcuk University</p>
+                      <p class="text-primary font-medium">Selçuk University</p>
                     </div>
                     <span
                       class="md:hidden inline-flex items-center rounded-md bg-[#233648] px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-500/20 w-fit"
@@ -1020,10 +1026,10 @@
                     <div class="flex flex-col">
                       <span
                         class="text-[10px] text-gray-500 uppercase tracking-wider font-semibold"
-                        >Degree</span
+                        >Abschluss</span
                       >
                       <span class="text-sm font-medium text-white"
-                        >Bachelor's (B.Sc.)</span
+                        >Bachelor (B.Sc.)</span
                       >
                     </div>
                   </div>
@@ -1031,7 +1037,6 @@
               </div>
             </div>
 
-            <!-- Sertifika 1: Bitaksi Go Bootcamp (solda) -->
             <div
               class="relative flex flex-col md:flex-row items-center w-full group"
             >
@@ -1069,14 +1074,13 @@
                   <div class="flex flex-wrap gap-2 mt-2">
                     <span
                       class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
-                      >Go Certificate</span
+                      >Go-Zertifikat</span
                     >
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Sertifika 2: Modern Web Development Course (sağda) -->
             <div
               class="relative flex flex-col md:flex-row-reverse items-center w-full group"
             >
@@ -1102,7 +1106,7 @@
                   >
                     <div>
                       <h3 class="text-xl font-bold text-white">
-                        Modern Web Development Course
+                        Moderner Webentwicklungskurs
                       </h3>
                       <p class="text-primary font-medium">Udemy</p>
                     </div>
@@ -1114,14 +1118,13 @@
                   <div class="flex flex-wrap gap-2 mt-2">
                     <span
                       class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
-                      >Web Certificate</span
+                      >Web-Zertifikat</span
                     >
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Sertifika 3: Başka bir Web Certificate (solda) - eğer gerekliyse -->
             <div
               class="relative flex flex-col md:flex-row items-center w-full group"
             >
@@ -1147,9 +1150,9 @@
                   >
                     <div>
                       <h3 class="text-xl font-bold text-white">
-                        Introduction to Programming with JAVA
+                        Einstieg in die Programmierung mit JAVA
                       </h3>
-                      <p class="text-primary font-medium">BTK Academy</p>
+                      <p class="text-primary font-medium">BTK Akademi</p>
                     </div>
                     <span
                       class="md:hidden inline-flex items-center rounded-md bg-[#233648] px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-500/20 w-fit"
@@ -1159,7 +1162,7 @@
                   <div class="flex flex-wrap gap-2 mt-2">
                     <span
                       class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
-                      >Introduction to Programming with JAVA Certificate</span
+                      >Zertifikat: Einstieg in JAVA</span
                     >
                   </div>
                 </div>
@@ -1191,8 +1194,10 @@
                   class="flex flex-col sm:flex-row justify-between sm:items-start gap-2"
                 >
                   <div>
-                    <h3 class="text-xl font-bold text-white">Advanced Java</h3>
-                    <p class="text-primary font-medium">BTK Academy</p>
+                    <h3 class="text-xl font-bold text-white">
+                      Java (Fortgeschritten)
+                    </h3>
+                    <p class="text-primary font-medium">BTK Akademi</p>
                   </div>
                   <span
                     class="md:hidden inline-flex items-center rounded-md bg-[#233648] px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-500/20 w-fit"
@@ -1202,7 +1207,7 @@
                 <div class="flex flex-wrap gap-2 mt-2">
                   <span
                     class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
-                    >Advanced Java Certificate</span
+                    >Zertifikat: Java (Fortgeschritten)</span
                   >
                 </div>
               </div>
@@ -1224,7 +1229,7 @@
             <h1
               class="text-3xl md:text-4xl font-bold tracking-tight mb-2 text-white"
             >
-              Professional Experience
+              Berufserfahrung
             </h1>
           </div>
           <button
@@ -1232,9 +1237,10 @@
             class="flex shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-blue-600 transition-all text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/20"
           >
             <span class="material-symbols-outlined text-[20px]">download</span>
-            <span class="truncate">Download CV</span>
+            <span class="truncate">Lebenslauf herunterladen</span>
           </button>
         </div>
+
         <div class="relative pl-2 md:pl-0">
           <div
             class="absolute left-8 top-0 bottom-0 w-[2px] bg-[#233648] hidden md:block md:left-1/2 md:-ml-[1px]"
@@ -1242,6 +1248,7 @@
           <div
             class="absolute left-6 top-0 bottom-0 w-[2px] bg-[#233648] md:hidden"
           ></div>
+
           <div class="flex flex-col gap-12">
             <div
               class="relative flex flex-col md:flex-row items-center w-full group"
@@ -1268,7 +1275,7 @@
                   >
                     <div>
                       <h3 class="text-xl font-bold text-white">
-                        Software Development Intern
+                        Praktikant Softwareentwicklung
                       </h3>
                       <p class="text-primary font-medium">
                         Turkcell Global Bilgi
@@ -1280,13 +1287,13 @@
                     >
                   </div>
                   <p class="text-gray-400 text-sm leading-relaxed">
-                    Gained hands-on experience in enterprise software
-                    development with a focus on Core Java and backend
-                    architectures. I participated in code reviews, designed
-                    system diagrams using Microsoft Visio, and adapted to agile
-                    team workflows. Additionally, I demonstrated versatility and
-                    high-performance by winning first place in a company
-                    hackathon with a project developed using React.js.
+                    Ich habe praktische Erfahrung in der
+                    Unternehmenssoftwareentwicklung mit Fokus auf Core Java und
+                    Backend-Architekturen gesammelt. Ich nahm an Code-Reviews
+                    teil, entwarf Systemdiagramme mit Microsoft Visio und
+                    integrierte mich in agile Teamprozesse. Zudem gewann ich mit
+                    einem React.js-Projekt den internen Hackathon und
+                    demonstrierte hohe Leistung und Vielseitigkeit.
                   </p>
                   <div class="flex flex-wrap gap-2 mt-2">
                     <span
@@ -1295,11 +1302,11 @@
                     >
                     <span
                       class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
-                      >Software Architecture</span
+                      >Softwarearchitektur</span
                     >
                     <span
                       class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
-                      >Hackathon Winner</span
+                      >Hackathon-Sieger</span
                     >
                     <span
                       class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
@@ -1335,7 +1342,7 @@
                   >
                     <div>
                       <h3 class="text-xl font-bold text-white">
-                        Frontend Developer Intern
+                        Praktikant Frontend-Entwicklung
                       </h3>
                       <p class="text-primary font-medium">Jotform</p>
                     </div>
@@ -1345,14 +1352,15 @@
                     >
                   </div>
                   <p class="text-gray-400 text-sm leading-relaxed">
-                    Contributed to a large-scale web application by integrating
-                    new structures and developing features within a complex
-                    codebase. Collaborated with senior developers to implement
-                    clean code principles and modern architectural patterns.
-                    Gained deep experience in component-based design using
-                    React.js and TailwindCSS, while ensuring seamless
-                    integration with dynamic backend-driven elements through
-                    JavaScript.
+                    Ich habe zu einer großskaligen Webanwendung beigetragen,
+                    indem ich neue Strukturen integrierte und Features in einer
+                    komplexen Codebase entwickelte. Gemeinsam mit
+                    Senior-Entwicklern arbeitete ich an Clean-Code-Prinzipien
+                    und modernen Architekturansätzen. Ich sammelte tiefgehende
+                    Erfahrung in komponentenbasiertem Design mit React.js und
+                    TailwindCSS und stellte eine nahtlose Integration
+                    dynamischer, backend getriebener Komponenten über JavaScript
+                    sicher.
                   </p>
                   <div class="flex flex-wrap gap-2 mt-2">
                     <span
@@ -1405,7 +1413,7 @@
                   >
                     <div>
                       <h3 class="text-xl font-bold text-white">
-                        Backend Developer
+                        Backend-Entwickler
                       </h3>
                       <p class="text-primary font-medium">Steelify</p>
                     </div>
@@ -1415,11 +1423,12 @@
                     >
                   </div>
                   <p class="text-gray-400 text-sm leading-relaxed">
-                    Developed a scalable backend architecture for a startup
-                    platform using NestJS and Node.js. Responsible for database
-                    design with PostgreSQL, containerization via Docker, and
-                    cloud deployment on Microsoft Azure. Focused on
-                    high-performance API security and modular system design.
+                    Ich entwickelte eine skalierbare Backend-Architektur für
+                    eine Startup-Plattform mit NestJS und Node.js.
+                    Verantwortlich war ich für Datenbankdesign mit PostgreSQL,
+                    Containerisierung mit Docker und Cloud-Deployments auf
+                    Microsoft Azure. Ich arbeitete mit Fokus auf hochperformante
+                    API-Sicherheit und modulares Systemdesign.
                   </p>
                   <div class="flex flex-wrap gap-2 mt-2">
                     <span
@@ -1440,7 +1449,7 @@
                     >
                     <span
                       class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
-                      >API Security</span
+                      >API-Sicherheit</span
                     >
                   </div>
                 </div>
@@ -1472,7 +1481,7 @@
                   >
                     <div>
                       <h3 class="text-xl font-bold text-white">
-                        Software Developer
+                        Softwareentwickler
                       </h3>
                       <p class="text-primary font-medium">
                         Yena Engineering BV
@@ -1484,12 +1493,12 @@
                     >
                   </div>
                   <p class="text-gray-400 text-sm leading-relaxed">
-                    Developed scalable backend systems by transitioning from
-                    Java Spring Boot to NestJS. Responsible for RESTful API
-                    architecture, PostgreSQL data management, and CI/CD
-                    deployment processes. Focused on maintaining system
-                    stability through modular code and clean architecture
-                    principles.
+                    Ich entwickelte skalierbare Backend-Systeme und begleitete
+                    die Migration von Java Spring Boot zu NestJS. Verantwortlich
+                    war ich für RESTful API-Architektur,
+                    PostgreSQL-Datenmanagement und CI/CD-Deployments. Ich
+                    fokussierte mich auf Systemstabilität durch modulare
+                    Code-Strukturen und Clean-Architecture-Prinzipien.
                   </p>
                   <div class="flex flex-wrap gap-2 mt-2">
                     <span
@@ -1542,7 +1551,7 @@
                   >
                     <div>
                       <h3 class="text-xl font-bold text-white">
-                        Software Developer Intern
+                        Praktikant Softwareentwicklung
                       </h3>
                       <p class="text-primary font-medium">
                         Yena Engineering BV
@@ -1554,11 +1563,11 @@
                     >
                   </div>
                   <p class="text-gray-400 text-sm leading-relaxed">
-                    Developed end-to-end solutions for web and mobile platforms
-                    using React and React Native. Built high-performance RESTful
-                    APIs with Node.js and Fastify.js, managed PostgreSQL
-                    databases, and ensured seamless full-stack integration
-                    across cross-functional teams.
+                    Ich entwickelte End-to-End-Lösungen für Web und Mobile mit
+                    React und React Native. Ich implementierte performante
+                    RESTful APIs mit Node.js und Fastify.js, verwaltete
+                    PostgreSQL-Datenbanken und stellte Full-Stack-Integration
+                    mit cross-funktionalen Teams sicher.
                   </p>
                   <div class="flex flex-wrap gap-2 mt-2">
                     <span
@@ -1607,7 +1616,7 @@
                   >
                     <div>
                       <h3 class="text-xl font-bold text-white">
-                        Backend Developer Intern
+                        Praktikant Backend-Entwicklung
                       </h3>
                       <p class="text-primary font-medium">MonSpark</p>
                     </div>
@@ -1617,11 +1626,12 @@
                     >
                   </div>
                   <p class="text-gray-400 text-sm leading-relaxed">
-                    Developed a full-scale marketplace application from scratch
-                    using Node.js and Express.js. Engineered the entire backend
-                    logic, including RESTful APIs, authentication, and MongoDB
-                    database management. Demonstrated the ability to take full
-                    ownership of a project from conception to completion.
+                    Ich entwickelte eine vollständige Marketplace-Anwendung von
+                    Grund auf mit Node.js und Express.js. Ich konzipierte die
+                    gesamte Backend-Logik, inklusive RESTful APIs,
+                    Authentifizierung und MongoDB-Datenbankmanagement. Ich
+                    gewann die Fähigkeit, ein Projekt von der Idee bis zur
+                    Fertigstellung End-to-End zu verantworten.
                   </p>
                   <div class="flex flex-wrap gap-2 mt-2">
                     <span
@@ -1642,7 +1652,7 @@
                     >
                     <span
                       class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-300 border border-[#233648]"
-                      >E-commerce</span
+                      >E-Commerce</span
                     >
                   </div>
                 </div>
@@ -1665,12 +1675,12 @@
             <h1
               class="text-3xl md:text-4xl font-bold tracking-tight mb-2 text-white"
             >
-              Projects
+              Projekte
             </h1>
             <p class="text-gray-400 text-sm md:text-base max-w-xl">
-              I architect scalable, high-performance, and secure server-side
-              systems. Passionate about transforming complex logic into seamless
-              digital reality.
+              Ich entwerfe skalierbare, performante und sichere serverseitige
+              Systeme. Komplexe Logik in nahtlose digitale Realität zu
+              verwandeln ist meine Leidenschaft.
             </p>
           </div>
           <a
@@ -1681,9 +1691,10 @@
             <span class="material-symbols-outlined text-[20px]"
               >call_merge</span
             >
-            <span class="truncate">GitHub Profile</span>
+            <span class="truncate">GitHub-Profil</span>
           </a>
         </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div
             class="flex flex-col p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 group h-full"
@@ -1700,7 +1711,7 @@
                 <a
                   class="flex items-center justify-center size-9 rounded-full bg-[#111a22] border border-[#233648] text-gray-400 hover:text-white hover:border-gray-500 transition-colors"
                   href="https://github.com/bbalbayrak/rabbitMQ-Microservice"
-                  title="Source Code"
+                  title="Quellcode"
                   target="_blank"
                 >
                   <span class="material-symbols-outlined text-[18px]"
@@ -1715,11 +1726,10 @@
               rabbitMQ-Microservice
             </h3>
             <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-              A microservices-based architecture demonstrating asynchronous
-              communication between services using RabbitMQ. This project
-              features a robust message broker implementation to handle
-              background tasks, ensuring high availability and decoupled system
-              components.
+              Eine microservicebasierte Architektur, die asynchrone
+              Kommunikation zwischen Services mit RabbitMQ demonstriert. Enthält
+              eine robuste Message-Broker-Implementierung zur Verwaltung von
+              Hintergrundjobs – für hohe Verfügbarkeit und lose Kopplung.
             </p>
             <div
               class="flex flex-wrap gap-2 pt-4 border-t border-[#233648]/50 mt-auto"
@@ -1746,6 +1756,7 @@
               >
             </div>
           </div>
+
           <div
             class="flex flex-col p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 group h-full"
           >
@@ -1761,7 +1772,7 @@
                 <a
                   class="flex items-center justify-center size-9 rounded-full bg-[#111a22] border border-[#233648] text-gray-400 hover:text-white hover:border-gray-500 transition-colors"
                   href="https://github.com/bbalbayrak/AIAM"
-                  title="Source Code"
+                  title="Quellcode"
                   target="_blank"
                 >
                   <span class="material-symbols-outlined text-[18px]"
@@ -1776,11 +1787,10 @@
               AIAM
             </h3>
             <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-              An AI-powered asset management system designed to optimize
-              resource allocation and tracking. Built with a focus on data
-              integrity and intelligent automation, the backend handles complex
-              analysis to provide actionable insights for asset lifecycle
-              management.
+              Ein KI-gestütztes Asset-Management-System zur Optimierung von
+              Ressourcenplanung und Tracking. Mit Fokus auf Datenintegrität und
+              intelligente Automatisierung liefert das Backend umsetzbare
+              Insights für das Lifecycle-Management.
             </p>
             <div
               class="flex flex-wrap gap-2 pt-4 border-t border-[#233648]/50 mt-auto"
@@ -1791,7 +1801,7 @@
               >
               <span
                 class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
-                >Data Analytics</span
+                >Datenanalyse</span
               >
               <span
                 class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
@@ -1803,6 +1813,7 @@
               >
             </div>
           </div>
+
           <div
             class="flex flex-col p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 group h-full"
           >
@@ -1816,7 +1827,7 @@
                 <a
                   class="flex items-center justify-center size-9 rounded-full bg-[#111a22] border border-[#233648] text-gray-400 hover:text-white hover:border-gray-500 transition-colors"
                   href="https://github.com/bbalbayrak/ChatBot"
-                  title="Source Code"
+                  title="Quellcode"
                   target="_blank"
                 >
                   <span class="material-symbols-outlined text-[18px]"
@@ -1831,11 +1842,11 @@
               Chat Bot
             </h3>
             <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-              A full-stack AI assistant application integrated with OpenAI's GPT
-              models. It features a robust backend architecture for handling API
-              requests, secure environment management, and seamless
-              communication between the client and AI services to provide
-              real-time, intelligent responses.
+              Eine Full-Stack-KI-Assistent-App, integriert mit
+              OpenAI-GPT-Modellen. Eine robuste Backend-Architektur für
+              API-Requests, sicheres Environment-Handling und flüssige
+              Kommunikation zwischen Client und KI-Services für intelligente
+              Antworten in Echtzeit.
             </p>
             <div
               class="flex flex-wrap gap-2 pt-4 border-t border-[#233648]/50 mt-auto"
@@ -1850,7 +1861,7 @@
               >
               <span
                 class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
-                >API Integration</span
+                >API-Integration</span
               >
               <span
                 class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
@@ -1862,6 +1873,7 @@
               >
             </div>
           </div>
+
           <div
             class="flex flex-col p-6 rounded-xl bg-surface-dark border border-[#233648] hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 group h-full"
           >
@@ -1877,7 +1889,7 @@
                 <a
                   class="flex items-center justify-center size-9 rounded-full bg-[#111a22] border border-[#233648] text-gray-400 hover:text-white hover:border-gray-500 transition-colors"
                   href="https://github.com/bbalbayrak/Market-Place"
-                  title="Source Code"
+                  title="Quellcode"
                   target="_blank"
                 >
                   <span class="material-symbols-outlined text-[18px]"
@@ -1892,11 +1904,11 @@
               Market Place
             </h3>
             <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-              A comprehensive full-stack marketplace platform built with the
-              MERN stack. I engineered a secure backend using Node.js and
-              Express, implementing JWT-based authentication and complex
-              Mongoose schemas to manage multi-vendor product listings, user
-              roles, and secure data transactions.
+              Eine umfassende Marketplace-Plattform, entwickelt mit dem
+              MERN-Stack. Ich entwarf ein sicheres Backend mit Node.js und
+              Express, implementierte JWT-basierte Authentifizierung und
+              komplexe Mongoose-Schemata für Multi-Vendor-Listings, Rollen, und
+              sichere Datenverarbeitung.
             </p>
             <div
               class="flex flex-wrap gap-2 pt-4 border-t border-[#233648]/50 mt-auto"
@@ -1915,15 +1927,15 @@
               >
               <span
                 class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
-                >JWT Authentication</span
+                >JWT-Authentifizierung</span
               >
               <span
                 class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
-                >REST API Design</span
+                >REST API-Design</span
               >
               <span
                 class="px-3 py-1 rounded-full bg-[#111a22] text-xs font-medium text-gray-400 border border-[#233648]"
-                >MVC Architecture</span
+                >MVC-Architektur</span
               >
             </div>
           </div>
@@ -1945,7 +1957,7 @@
                 <h1
                   class="text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]"
                 >
-                  Technology Skills
+                  Technologiekompetenzen
                 </h1>
               </div>
             </div>
@@ -1956,7 +1968,7 @@
                 class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary text-white pl-4 pr-4 transition-all"
                 id="btn-all"
               >
-                <p class="text-xs font-bold leading-normal">All</p>
+                <p class="text-xs font-bold leading-normal">Alle</p>
               </button>
               <button
                 onclick="filterSkills('frontend')"
@@ -2015,12 +2027,11 @@
                 <p
                   class="text-text-muted group-hover:text-white text-xs font-medium leading-normal"
                 >
-                  Database
+                  Datenbank
                 </p>
               </button>
             </div>
 
-            <!-- Frontend Geliştirme Bölümü -->
             <div class="mt-2 skill-section" id="frontend-section">
               <div
                 class="flex items-center gap-2 px-4 pb-2 pt-4 border-b border-[#233648] mb-4"
@@ -2031,7 +2042,7 @@
                 <h2
                   class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"
                 >
-                  Frontend Development
+                  Frontend-Entwicklung
                 </h2>
               </div>
               <div
@@ -2052,14 +2063,14 @@
                       </div>
                       <span
                         class="bg-[#111a22] text-text-muted text-[10px] font-semibold px-1.5 py-0.5 rounded"
-                        >3+ Years</span
+                        >3+ Jahre</span
                       >
                     </div>
                     <h3 class="text-white text-sm font-bold mb-1">ReactJS</h3>
                     <p
                       class="text-text-muted text-xs leading-snug line-clamp-2"
                     >
-                      Modern UI, Hooks, Context API.
+                      Modernes UI, Hooks, Context API.
                     </p>
                   </div>
                   <div class="w-full bg-[#111a22] rounded-full h-1 mt-3">
@@ -2069,6 +2080,7 @@
                     ></div>
                   </div>
                 </div>
+
                 <div
                   class="bg-[#233648] rounded-lg p-3 border border-transparent hover:border-primary/50 card-hover-effect transition-all duration-300 group flex flex-col justify-between min-h-[140px]"
                 >
@@ -2084,7 +2096,7 @@
                       </div>
                       <span
                         class="bg-[#111a22] text-text-muted text-[10px] font-semibold px-1.5 py-0.5 rounded"
-                        >4+ Years</span
+                        >4+ Jahre</span
                       >
                     </div>
                     <h3 class="text-white text-sm font-bold mb-1">
@@ -2093,7 +2105,7 @@
                     <p
                       class="text-text-muted text-xs leading-snug line-clamp-2"
                     >
-                      Type-safe code structure, interfaces.
+                      Typsicherer Code, Interfaces.
                     </p>
                   </div>
                   <div class="w-full bg-[#111a22] rounded-full h-1 mt-3">
@@ -2103,6 +2115,7 @@
                     ></div>
                   </div>
                 </div>
+
                 <div
                   class="bg-[#233648] rounded-lg p-3 border border-transparent hover:border-primary/50 card-hover-effect transition-all duration-300 group flex flex-col justify-between min-h-[140px]"
                 >
@@ -2123,7 +2136,7 @@
                       </div>
                       <span
                         class="bg-[#111a22] text-text-muted text-[10px] font-semibold px-1.5 py-0.5 rounded"
-                        >4+ Years</span
+                        >4+ Jahre</span
                       >
                     </div>
                     <h3 class="text-white text-sm font-bold mb-1">
@@ -2132,7 +2145,7 @@
                     <p
                       class="text-text-muted text-xs leading-snug line-clamp-2"
                     >
-                      ES6+, Asynchronous programming, DOM manipulation.
+                      ES6+, asynchrone Programmierung, DOM-Manipulation.
                     </p>
                   </div>
                   <div class="w-full bg-[#111a22] rounded-full h-1 mt-3">
@@ -2142,6 +2155,7 @@
                     ></div>
                   </div>
                 </div>
+
                 <div
                   class="bg-[#233648] rounded-lg p-3 border border-transparent hover:border-primary/50 card-hover-effect transition-all duration-300 group flex flex-col justify-between min-h-[140px]"
                 >
@@ -2157,14 +2171,14 @@
                       </div>
                       <span
                         class="bg-[#111a22] text-text-muted text-[10px] font-semibold px-1.5 py-0.5 rounded"
-                        >1+ Years</span
+                        >1+ Jahr</span
                       >
                     </div>
                     <h3 class="text-white text-sm font-bold mb-1">NextJS</h3>
                     <p
                       class="text-text-muted text-xs leading-snug line-clamp-2"
                     >
-                      SSR, SSG, Routing ve API Routes.
+                      SSR, SSG, Routing und API Routes.
                     </p>
                   </div>
                   <div class="w-full bg-[#111a22] rounded-full h-1 mt-3">
@@ -2177,7 +2191,6 @@
               </div>
             </div>
 
-            <!-- Backend Geliştirme Bölümü -->
             <div class="mt-6 skill-section" id="backend-section">
               <div
                 class="flex items-center gap-2 px-4 pb-2 pt-4 border-b border-[#233648] mb-4"
@@ -2188,7 +2201,7 @@
                 <h2
                   class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"
                 >
-                  Backend Development
+                  Backend-Entwicklung
                 </h2>
               </div>
               <div
@@ -2209,14 +2222,14 @@
                       </div>
                       <span
                         class="bg-[#111a22] text-text-muted text-[10px] font-semibold px-1.5 py-0.5 rounded"
-                        >3+ Years</span
+                        >3+ Jahre</span
                       >
                     </div>
                     <h3 class="text-white text-sm font-bold mb-1">NestJS</h3>
                     <p
                       class="text-text-muted text-xs leading-snug line-clamp-2"
                     >
-                      Modular architecture, Microservices.
+                      Modulare Architektur, Microservices.
                     </p>
                     <div class="w-full bg-[#111a22] rounded-full h-1 mt-3">
                       <div
@@ -2236,6 +2249,7 @@
                     >
                   </div>
                 </div>
+
                 <div
                   class="bg-[#233648] rounded-lg p-3 border border-transparent hover:border-primary/50 card-hover-effect transition-all duration-300 group flex flex-col justify-between min-h-[140px]"
                 >
@@ -2251,14 +2265,14 @@
                       </div>
                       <span
                         class="bg-[#111a22] text-text-muted text-[10px] font-semibold px-1.5 py-0.5 rounded"
-                        >1 Year</span
+                        >1 Jahr</span
                       >
                     </div>
                     <h3 class="text-white text-sm font-bold mb-1">GoLang</h3>
                     <p
                       class="text-text-muted text-xs leading-snug line-clamp-2"
                     >
-                      High performance and Concurrency.
+                      Hohe Performance und Parallelität.
                     </p>
                     <div class="w-full bg-[#111a22] rounded-full h-1 mt-3">
                       <div
@@ -2278,6 +2292,7 @@
                     >
                   </div>
                 </div>
+
                 <div
                   class="bg-[#233648] rounded-lg p-3 border border-transparent hover:border-primary/50 card-hover-effect transition-all duration-300 group flex flex-col justify-between min-h-[140px]"
                 >
@@ -2293,14 +2308,14 @@
                       </div>
                       <span
                         class="bg-[#111a22] text-text-muted text-[10px] font-semibold px-1.5 py-0.5 rounded"
-                        >2 Years</span
+                        >2 Jahre</span
                       >
                     </div>
                     <h3 class="text-white text-sm font-bold mb-1">RabbitMQ</h3>
                     <p
                       class="text-text-muted text-xs leading-snug line-clamp-2"
                     >
-                      Asynchronous tasks, Message queuing.
+                      Asynchrone Jobs, Message Queue.
                     </p>
                     <div class="w-full bg-[#111a22] rounded-full h-1 mt-3">
                       <div
@@ -2312,10 +2327,11 @@
                   <div class="flex flex-wrap gap-1 mt-2">
                     <span
                       class="text-[9px] bg-[#111a22] text-[#92adc9] px-1.5 py-0.5 rounded"
-                      >Message Queuing</span
+                      >Message Queue</span
                     >
                   </div>
                 </div>
+
                 <div
                   class="bg-[#233648] rounded-lg p-3 border border-transparent hover:border-primary/50 card-hover-effect transition-all duration-300 group flex flex-col justify-between min-h-[140px]"
                 >
@@ -2331,14 +2347,15 @@
                       </div>
                       <span
                         class="bg-[#111a22] text-text-muted text-[10px] font-semibold px-1.5 py-0.5 rounded"
-                        >4+ Years</span
+                        >4+ Jahre</span
                       >
                     </div>
                     <h3 class="text-white text-sm font-bold mb-1">SQL</h3>
                     <p
                       class="text-text-muted text-xs leading-snug line-clamp-2"
                     >
-                      Complex queries, relational modeling, and data integrity.
+                      Komplexe Abfragen, relationales Modellieren und
+                      Datenintegrität.
                     </p>
                     <div class="w-full bg-[#111a22] rounded-full h-1 mt-3">
                       <div
@@ -2357,9 +2374,7 @@
               </div>
             </div>
 
-            <!-- Database and DevOps Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 px-4">
-              <!-- Database part -->
               <div class="skill-section" id="database-section">
                 <div
                   class="flex items-center gap-2 px-0 pb-2 pt-2 border-b border-[#233648] mb-3"
@@ -2370,7 +2385,7 @@
                   <h2
                     class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"
                   >
-                    Database
+                    Datenbank
                   </h2>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
@@ -2394,10 +2409,12 @@
                     <div>
                       <h4 class="text-white font-bold text-sm">PostgreSQL</h4>
                       <p class="text-text-muted text-[10px] leading-tight mt-1">
-                        Advanced relational management and indexing.
+                        Fortgeschrittenes relationales Management und
+                        Indizierung.
                       </p>
                     </div>
                   </div>
+
                   <div
                     class="flex flex-col gap-2 bg-[#233648] p-3 rounded-lg border border-transparent hover:border-primary/30 transition-all"
                   >
@@ -2418,10 +2435,11 @@
                     <div>
                       <h4 class="text-white font-bold text-sm">MongoDB</h4>
                       <p class="text-text-muted text-[10px] leading-tight mt-1">
-                        Flexible document-based NoSQL architecture.
+                        Flexible, dokumentenbasierte NoSQL-Architektur.
                       </p>
                     </div>
                   </div>
+
                   <div
                     class="flex flex-col gap-2 bg-[#233648] p-3 rounded-lg border border-transparent hover:border-primary/30 transition-all"
                   >
@@ -2442,10 +2460,12 @@
                     <div>
                       <h4 class="text-white font-bold text-sm">Redis</h4>
                       <p class="text-text-muted text-[10px] leading-tight mt-1">
-                        High-speed caching and in-memory data structures.
+                        Hochgeschwindigkeits-Cache und
+                        In-Memory-Datenstrukturen.
                       </p>
                     </div>
                   </div>
+
                   <div
                     class="flex flex-col gap-2 bg-[#233648] p-3 rounded-lg border border-transparent hover:border-primary/30 transition-all"
                   >
@@ -2466,14 +2486,13 @@
                     <div>
                       <h4 class="text-white font-bold text-sm">MySQL</h4>
                       <p class="text-text-muted text-[10px] leading-tight mt-1">
-                        Standard relational database management.
+                        Standard-Management relationaler Datenbanken.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- DevOps part -->
               <div class="skill-section" id="devops-section">
                 <div
                   class="flex items-center gap-2 px-0 pb-2 pt-2 border-b border-[#233648] mb-3"
@@ -2484,7 +2503,7 @@
                   <h2
                     class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"
                   >
-                    DevOps & Tools
+                    DevOps und Tools
                   </h2>
                 </div>
                 <div class="grid grid-cols-3 gap-3">
@@ -2636,7 +2655,6 @@
     >
       <div class="max-w-[600px] mx-auto flex flex-col gap-6 items-center">
         <div class="flex gap-6 mt-10">
-          <!-- LinkedIn Bağlantısı -->
           <a
             class="text-slate-400 hover:text-white transition-colors"
             href="https://www.linkedin.com/in/bbalbayrak"
@@ -2656,7 +2674,7 @@
               </svg>
             </div>
           </a>
-          <!-- GitHub Bağlantısı -->
+
           <a
             class="text-slate-400 hover:text-white transition-colors"
             href="https://www.github.com/bbalbayrak"
@@ -2676,13 +2694,13 @@
               </svg>
             </div>
           </a>
-          <!-- E-mail Connection -->
+
           <a
             class="text-slate-400 hover:text-white transition-colors"
             href="mailto:bbalbayrakk@gmail.com"
             rel="noopener noreferrer"
           >
-            <span class="sr-only">Email</span>
+            <span class="sr-only">E-Mail</span>
             <div class="size-6">
               <svg
                 fill="currentColor"
@@ -2697,7 +2715,7 @@
           </a>
         </div>
         <div class="mt-8 text-xs text-slate-500">
-          © 2026 Bilal Burak Albayrak. All rights reserved.
+          © 2026 Bilal Burak Albayrak. Alle Rechte vorbehalten.
         </div>
       </div>
     </div>
